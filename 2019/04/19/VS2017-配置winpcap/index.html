@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>VS2017配置winpcap | </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="系统信息： 64位 Win10  首先看下面教程： winpcap教程 步骤： 安装winpcap 下载wpdpack 启动vs2017 新建visual C++ 空项目 项目-&amp;gt;属性-&amp;gt;左侧配置属性-&amp;gt;VC++目录，修改包含目录和库目录到wpdpack的include和lib 项目-&amp;gt;属性-&amp;gt;C/C++-&amp;gt;预处理器-&amp;gt;预处理器定义，添加_XKEYCHE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VS2017配置winpcap">
+<meta property="og:url" content="http://yoursite.com/2019/04/19/VS2017-配置winpcap/index.html">
+<meta property="og:site_name">
+<meta property="og:description" content="系统信息： 64位 Win10  首先看下面教程： winpcap教程 步骤： 安装winpcap 下载wpdpack 启动vs2017 新建visual C++ 空项目 项目-&amp;gt;属性-&amp;gt;左侧配置属性-&amp;gt;VC++目录，修改包含目录和库目录到wpdpack的include和lib 项目-&amp;gt;属性-&amp;gt;C/C++-&amp;gt;预处理器-&amp;gt;预处理器定义，添加_XKEYCHE">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-19T13:20:22.126Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="VS2017配置winpcap">
+<meta name="twitter:description" content="系统信息： 64位 Win10  首先看下面教程： winpcap教程 步骤： 安装winpcap 下载wpdpack 启动vs2017 新建visual C++ 空项目 项目-&amp;gt;属性-&amp;gt;左侧配置属性-&amp;gt;VC++目录，修改包含目录和库目录到wpdpack的include和lib 项目-&amp;gt;属性-&amp;gt;C/C++-&amp;gt;预处理器-&amp;gt;预处理器定义，添加_XKEYCHE">
+  
+    <link rel="alternate" href="/atom.xml" title type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  
+
+</head>
+</html>
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class href="/index.html">Home</a></li>
+        
+          <li><a class href="/archives/">Archives</a></li>
+        
+          <li><a class href="https://github.com/TimoTolkki1966">Github</a></li>
+        
+          <li><a class href="https://www.linkedin.com/in/ziwei-cheng-7a9266155/">Linkedin</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title"></h1>
+  
+    <p class="lead blog-description">程子威的博客</p>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-VS2017-配置winpcap" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      VS2017配置winpcap
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2019/04/19/VS2017-配置winpcap/" class="article-date"><time datetime="2019-04-19T13:14:12.000Z" itemprop="datePublished">2019-04-19</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>系统信息： 64位 Win10</p>
+</blockquote>
+<p>首先看下面教程：</p>
+<p><a href="http://www.ferrisxu.com/WinPcap/html/index.html" target="_blank" rel="noopener">winpcap教程</a></p>
+<h3 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h3><ol>
+<li>安装winpcap</li>
+<li>下载wpdpack</li>
+<li>启动vs2017</li>
+<li>新建visual C++ 空项目</li>
+<li>项目-&gt;属性-&gt;左侧配置属性-&gt;VC++目录，修改包含目录和库目录到wpdpack的include和lib</li>
+<li>项目-&gt;属性-&gt;C/C++-&gt;预处理器-&gt;预处理器定义，添加_XKEYCHECK_H；HAVE_REMOT</li>
+<li>项目-&gt;属性-&gt;链接器-&gt;输入-&gt;附加依赖项，添加Packet.lib;wpcap.lib</li>
+<li>复制查看设备列表，看能否运行</li>
+</ol>
+<h3 id="可能存在的问题："><a href="#可能存在的问题：" class="headerlink" title="可能存在的问题："></a>可能存在的问题：</h3><h4 id="报错：无法打开源文件sys-time-h和u-int"><a href="#报错：无法打开源文件sys-time-h和u-int" class="headerlink" title="报错：无法打开源文件sys/time.h和u_int"></a>报错：无法打开源文件sys/time.h和u_int</h4><p>原因：这些都是unix系统的东西，需要在主文件中指明是windows系统：</p>
+<pre><code>#define WIN32
+</code></pre><h4 id="报错：找不到源文件stdafx-h"><a href="#报错：找不到源文件stdafx-h" class="headerlink" title="报错：找不到源文件stdafx.h"></a>报错：找不到源文件stdafx.h</h4><p>原因：已经再预编译头中定义，不需要多余include</p>
+<p>中文手册的例程可能有问题，这个是我能运行的程序：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">#define WIN32</span><br><span class="line"></span><br><span class="line">#include &quot;pcap.h&quot;</span><br><span class="line">#include &quot;windows.h&quot;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">#pragma comment(lib,&quot;wpcap.lib&quot;)</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	pcap_if_t *alldevs;</span><br><span class="line">	pcap_if_t *d;</span><br><span class="line">	int i = 0;</span><br><span class="line">	char errbuf[PCAP_ERRBUF_SIZE];</span><br><span class="line"></span><br><span class="line">	/* 获取本地机器设备列表 */</span><br><span class="line">	if (pcap_findalldevs_ex(PCAP_SRC_IF_STRING, NULL /* auth is not needed */, &amp;alldevs, errbuf) == -1)</span><br><span class="line">	&#123;</span><br><span class="line">		fprintf(stderr, &quot;Error in pcap_findalldevs_ex: %s\n&quot;, errbuf);</span><br><span class="line">		exit(1);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/* 打印列表 */</span><br><span class="line">	for (d = alldevs; d != NULL; d = d-&gt;next)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;%d. %s&quot;, ++i, d-&gt;name);</span><br><span class="line">		if (d-&gt;description)</span><br><span class="line">			printf(&quot; (%s)\n&quot;, d-&gt;description);</span><br><span class="line">		else</span><br><span class="line">			printf(&quot; (No description available)\n&quot;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	int a; cin &gt;&gt; a;//卡一下显示。。。</span><br><span class="line">	if (i == 0)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;\nNo interfaces found! Make sure WinPcap is installed.\n&quot;);</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/* 不再需要设备列表了，释放它 */</span><br><span class="line">	pcap_freealldevs(alldevs);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/04/19/VS2017-配置winpcap/" data-id="cjuo3q2w40001akuw9nb3xgzj" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2019/04/19/mySQL连接JDBC-Win10-idea-intellij/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">mySQL连接JDBC (Win10+idea intellij)</span>
+    </a>
+  </li>
+  
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p> tolkkki@outlook.com </p>
+
+</div>
+
+
+  
+
+
+  
+
+
+  
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/04/">April 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2019/04/19/VS2017-配置winpcap/">VS2017配置winpcap</a>
+        </li>
+      
+        <li>
+          <a href="/2019/04/19/mySQL连接JDBC-Win10-idea-intellij/">mySQL连接JDBC (Win10+idea intellij)</a>
+        </li>
+      
+        <li>
+          <a href="/2019/04/19/使用Gparted更改Ubuntu分区大小/">使用Gparted更改Ubuntu分区大小</a>
+        </li>
+      
+        <li>
+          <a href="/2019/04/19/srt字幕格式转txt文本/">.srt字幕格式转txt文本</a>
+        </li>
+      
+        <li>
+          <a href="/2019/04/18/使用Hexo/">使用Hexo</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Ziwei Cheng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>

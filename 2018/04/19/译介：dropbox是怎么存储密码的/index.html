@@ -13,7 +13,7 @@
 <meta property="og:description" content="It’s universally acknowledged that it’s a bad idea to storeplain-text passwords. If a database containing plain-text passwords iscompromised, user accounts are in immediate danger. For this reason, as">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2018/04/19/译介：dropbox是怎么存储密码的/1.png">
-<meta property="og:updated_time" content="2019-04-19T13:13:12.071Z">
+<meta property="og:updated_time" content="2019-04-19T13:15:45.105Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="译介：dropbox是怎么存储密码的">
 <meta name="twitter:description" content="It’s universally acknowledged that it’s a bad idea to storeplain-text passwords. If a database containing plain-text passwords iscompromised, user accounts are in immediate danger. For this reason, as">
@@ -114,7 +114,7 @@
 <p>我们都知道不应该明文存储密码。如果存有明文密码的数据库被攻击，用户账户将会立刻陷入危险。早在1976年，工业界就开始使用单向hash函数来存储密码（从Unix Ctypt开始）。不幸的是， 尽管攻击者无法直接获取密码了，他们还是可以通过计算常见密码的hash和你的密码进行比对，从而获取密码。有了这种手段，类似SHA的加密算法就有了致命的缺点：这些算法设计的初衷就是计算快。民用GPU可以每秒计算出上百万个SHA256值，而专业的GPU可以每秒计算出上亿条hash。</p>
 <p>Over the years, we’ve quietly upgraded our passwordhashing approach multiple times in an ongoing effort to stay ahead of the badguys. In this post, we want to share more details of our current passwordstorage mechanism and our reasoning behind it. Our password storage schemerelies on three different layers of cryptographic protections, as the figurebelow illustrates. For ease of elucidation, in the figure and below we omit anymention of binary encoding (base64).<br>过去几年中，我们已经多次升级了我们的hash过程。在这条博文中，我们希望和大家分享一些技术细节，以及它们的原因。如下图所示，我们的密码存储依赖3层密码学防护系统。为了叙述方便，我们省略了二进制的转译过程。</p>
 <img src="/2018/04/19/译介：dropbox是怎么存储密码的/1.png">
-<h1 id="Multiple-layers-of-protection-for-passwords"><a href="#Multiple-layers-of-protection-for-passwords" class="headerlink" title="Multiple layers of protection for passwords"></a>Multiple layers of protection for passwords</h1><h1 id="多层的密码保护"><a href="#多层的密码保护" class="headerlink" title="多层的密码保护"></a>多层的密码保护</h1><p>We rely on bcrypt asour core hashing algorithm with a per-user salt and an encryption key (or globalpepper), stored separately. Our approach differs from basicbcrypt in a few significant ways.</p>
+<h2 id="Multiple-layers-of-protection-for-passwords"><a href="#Multiple-layers-of-protection-for-passwords" class="headerlink" title="Multiple layers of protection for passwords"></a>Multiple layers of protection for passwords</h2><h2 id="多层的密码保护"><a href="#多层的密码保护" class="headerlink" title="多层的密码保护"></a>多层的密码保护</h2><p>We rely on bcrypt asour core hashing algorithm with a per-user salt and an encryption key (or globalpepper), stored separately. Our approach differs from basicbcrypt in a few significant ways.</p>
 <p>我们使用bcrypt作为核心hash算法，并且给每个用户分别加了的盐，使用独立私钥（以及全局pepper，见下文）。我们的方案和基本bcrypt有以下几点不同：</p>
 <p>First, the plaintext password is transformed into a hashvalue using SHA512. This addresses two particular issues withbcrypt. Some implementations of bcrypt truncate the input to 72 bytes, whichreduces the entropy of the passwords. Other implementations don’t truncate theinput and are therefore vulnerable to DoS attacks becausethey allow the input of arbitrarily long passwords. By applying SHA, we canquickly convert really long passwords into a fixed length 512 bit value,solving both problems.</p>
 <p>首先，使用SHA512算法将密码明文转为hash值。这解决了两个问题。一是有些bcrypt算法会将输入裁剪到72字节，而这会限制字节的复杂度；二是太长的密码会给DoS攻击提供机会。先将密码SHA一举解决了这两个问题。</p>
@@ -122,15 +122,15 @@
 <p>之后，这个hash值使用强度为10（最高强度，译注）的bcrypt算法再次进行hash，并且加了单用户的盐。和SHA算法不同，bcrypt的算法设计之初就避免了通过专门设计的GPU来加速。在我们的服务器上一般要用100毫秒来进行这个计算。</p>
 <p>Finally,the resulting bcrypt hash is encrypted with AES256 using a secret key (common to allhashes) that we refer to as a pepper. The pepper is a defense in depth measure.The pepper value is stored separately in a manner that makes it difficult todiscover by an attacker (i.e. not in a database table). As a result, if onlythe password storage is compromised, the password hashes are encrypted and ofno use to an attacker.</p>
 <p>最终，bcrypt的结果再交给AES256加密，获得pepper（加密用的私钥）。Pepper是深度的防御措施。Pepper的值被分别存储在难以发现的地方（不在数据库里面）。这样，即使最终的密码存储泄露了，攻击者还是得不到密码的hash。</p>
-<h1 id="Why-not-use-scrypt-argon2-over-bcrypt"><a href="#Why-not-use-scrypt-argon2-over-bcrypt" class="headerlink" title="Why not use {scrypt, argon2} over bcrypt?"></a>Why not use {scrypt, argon2} over bcrypt?</h1><h1 id="为什么不用scrypt或者argon2，代替bcrypt呢？"><a href="#为什么不用scrypt或者argon2，代替bcrypt呢？" class="headerlink" title="为什么不用scrypt或者argon2，代替bcrypt呢？"></a>为什么不用scrypt或者argon2，代替bcrypt呢？</h1><p>We considered using scrypt, but we hadmore experience using bcrypt. The debate over which algorithm is better isstill open, and most security experts agree that scrypt and bcrypt providesimilar protections.</p>
+<h2 id="Why-not-use-scrypt-argon2-over-bcrypt"><a href="#Why-not-use-scrypt-argon2-over-bcrypt" class="headerlink" title="Why not use {scrypt, argon2} over bcrypt?"></a>Why not use {scrypt, argon2} over bcrypt?</h2><h2 id="为什么不用scrypt或者argon2，代替bcrypt呢？"><a href="#为什么不用scrypt或者argon2，代替bcrypt呢？" class="headerlink" title="为什么不用scrypt或者argon2，代替bcrypt呢？"></a>为什么不用scrypt或者argon2，代替bcrypt呢？</h2><p>We considered using scrypt, but we hadmore experience using bcrypt. The debate over which algorithm is better isstill open, and most security experts agree that scrypt and bcrypt providesimilar protections.</p>
 <p>我们考虑过使用scrypt，但是我们对bcrypt更有经验。这两种算法哪种更好目前还没有定论，安全专家们认为他们的安全强度是五五开的。</p>
 <p>We’re considering argon2 for our next upgrade: when we movedto our current scheme, argon2 hadn’t (yet) won the Password Hashing Competition.Additionally, while we believe argon2 is a fantastic password hashing function,we like that bcrypt has been around since 1999 without any significantvulnerabilities found.</p>
 <p>我们正在考虑升级到argon2：在上一次的时候，argon2还没有赢得密码哈希大赛。此外，尽管argon2是很好的算法，bcrypt自从1999年来还没有重大的漏洞。</p>
-<h1 id="Why-is-the-global-pepper-used-for-encryptioninstead-of-hashing"><a href="#Why-is-the-global-pepper-used-for-encryptioninstead-of-hashing" class="headerlink" title="Why is the global pepper used for encryptioninstead of hashing?"></a>Why is the global pepper used for encryptioninstead of hashing?</h1><h1 id="为什么使用统一的pepper来对称加密，而不是用来hash？"><a href="#为什么使用统一的pepper来对称加密，而不是用来hash？" class="headerlink" title="为什么使用统一的pepper来对称加密，而不是用来hash？"></a>为什么使用统一的pepper来对称加密，而不是用来hash？</h1><p>Recall that the global pepper is a defense in depthmeasure and we store it separately. But storing it separately also means thatwe have to include the possibility of the pepper (and not the password hashes)being compromised. If we use the global pepper for hashing, we can’t easilyrotate it. Instead, using it for encryption gives us similar security but withthe added ability to rotate. The input to this encryption function israndomized, but we also include a random initialization vector (IV).</p>
+<h2 id="Why-is-the-global-pepper-used-for-encryptioninstead-of-hashing"><a href="#Why-is-the-global-pepper-used-for-encryptioninstead-of-hashing" class="headerlink" title="Why is the global pepper used for encryptioninstead of hashing?"></a>Why is the global pepper used for encryptioninstead of hashing?</h2><h2 id="为什么使用统一的pepper来对称加密，而不是用来hash？"><a href="#为什么使用统一的pepper来对称加密，而不是用来hash？" class="headerlink" title="为什么使用统一的pepper来对称加密，而不是用来hash？"></a>为什么使用统一的pepper来对称加密，而不是用来hash？</h2><p>Recall that the global pepper is a defense in depthmeasure and we store it separately. But storing it separately also means thatwe have to include the possibility of the pepper (and not the password hashes)being compromised. If we use the global pepper for hashing, we can’t easilyrotate it. Instead, using it for encryption gives us similar security but withthe added ability to rotate. The input to this encryption function israndomized, but we also include a random initialization vector (IV).</p>
 <p>我们采用统一的pepper进行对称加密，并且采取分别存储。但是我们必须考虑到这种存储方式下，pepper（而不是密码hash值）是可能被窃取的。如果我们把这个pepper用于hash，那我们很难更改它。但是用于对称加密的话，安全强度相似，但很容易更改。尽管AES接收的输入是随机的，但是我们同样使用了随机的初始向量IV。</p>
 <p>Going forward, we’re considering storing the globalpepper in a hardware security module (HSM). At our scale, this is anundertaking with considerable complexity, but would significantly reduce thechances of a pepper compromise. We also plan to increase our bcrypt strength inour next update.</p>
 <p>更进一步，我们正自考虑把pepper存储在一个硬件里。这带来的消耗是可以接受的，但是会显著降低pepper泄露的几率。我们同样在考虑增加bcrypt的强度。</p>
-<h1 id="Moving-forward"><a href="#Moving-forward" class="headerlink" title="Moving forward"></a>Moving forward</h1><h1 id="展望未来"><a href="#展望未来" class="headerlink" title="展望未来"></a>展望未来</h1><p>We believe this use of SHA512, plus bcrypt, andAES256 is currently among the strongest and most future-proof methods toprotect passwords. At the same time, we know that attackers are continuouslyevolving—and our defenses will too. Our password hashing procedure is just oneof many measures we use to secure Dropbox. We’ve deployed additional safeguardsagainst online brute-force attacks like rate-limiting password attempts,captchas, and a range of abuse mitigations. Like the diagram above, there aremany layers to maintaining robust security, and we’re actively investing in allof them. We’d love to hear your thoughts.</p>
+<h2 id="Moving-forward"><a href="#Moving-forward" class="headerlink" title="Moving forward"></a>Moving forward</h2><h2 id="展望未来"><a href="#展望未来" class="headerlink" title="展望未来"></a>展望未来</h2><p>We believe this use of SHA512, plus bcrypt, andAES256 is currently among the strongest and most future-proof methods toprotect passwords. At the same time, we know that attackers are continuouslyevolving—and our defenses will too. Our password hashing procedure is just oneof many measures we use to secure Dropbox. We’ve deployed additional safeguardsagainst online brute-force attacks like rate-limiting password attempts,captchas, and a range of abuse mitigations. Like the diagram above, there aremany layers to maintaining robust security, and we’re actively investing in allof them. We’d love to hear your thoughts.</p>
 <p>我们相信通过对SHA512，bcrypt和AES256的综合使用构建了当前最强的密码存储机制。攻击者的手段在不断进化——我们的防御也是如此。对密码的hash过程只是Dropbox的诸多安全手段之一。我们已经开发出了额外的手段来防御暴力攻击手段，比如限制流量，captchas等等. 正如此前展示的那样，我们有多层的系统来提供稳定的系统，并且我们正在深入研究。我们也很希望知道你们的想法。</p>
 
       
@@ -142,7 +142,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/19/译介：dropbox是怎么存储密码的/" data-id="cjuo3gwo5000a3ouwrqqsvoht" class="article-share-link">
+      <a data-url="http://yoursite.com/2018/04/19/译介：dropbox是怎么存储密码的/" data-id="cjuo3q2xl000bakuwr1yc4cqk" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -199,7 +199,7 @@
   
   <div class="sidebar-module">
     <h4>Archives</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/04/">April 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">1</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/04/">April 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">1</span></li></ul>
   </div>
 
 
@@ -208,6 +208,10 @@
   <div class="sidebar-module">
     <h4>Recents</h4>
     <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2019/04/19/VS2017-配置winpcap/">VS2017配置winpcap</a>
+        </li>
       
         <li>
           <a href="/2019/04/19/mySQL连接JDBC-Win10-idea-intellij/">mySQL连接JDBC (Win10+idea intellij)</a>
@@ -223,10 +227,6 @@
       
         <li>
           <a href="/2019/04/18/使用Hexo/">使用Hexo</a>
-        </li>
-      
-        <li>
-          <a href="/2018/11/05/使用crontab/">使用crontab</a>
         </li>
       
     </ul>
