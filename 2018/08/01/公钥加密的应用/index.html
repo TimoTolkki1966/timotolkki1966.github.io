@@ -3,27 +3,19 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>mySQL连接JDBC (Win10+idea intellij) | </title>
+  <title>公钥加密的应用 | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="首先依次安装好win10版本的MySQL和Java环境，并配置好PATH。我使用的IDE是IntelliJIDEA。  在IntelliJIDEA中建立一个简单的项目，命名为DBstu，测试可以正常Helloworld。  之后在项目中新建一个文件夹lib。在安装MySQL之后，可以在connector J 8.0文件夹下面找到MySQL的驱动包。将这个包复制到lib目录下。   使用快捷键Ctr">
+  <meta name="description" content="因为我是信息安全专业的，面试的时候就经常被问到这个，很神奇…… 实际上光RSA的应用就太多了，说2个最最常见的吧 1. TLS/SSLTLS加密首先用公钥加密协商一个私钥出来。 之后用这个协商出来的私钥进行对称加密传输。 （以下摘自维基百科：）  为了生成会话密钥用于安全连接，客户端使用服务器的公钥加密随机生成的密钥，并将其发送到服务器，只有服务器才能使用自己的私钥解密。 利用随机数，双方生成用于">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mySQL连接JDBC (Win10+idea intellij)">
-<meta property="og:url" content="http://yoursite.com/2018/05/21/mySQL连接JDBC-Win10-idea-intellij/index.html">
+<meta property="og:title" content="公钥加密的应用">
+<meta property="og:url" content="http://yoursite.com/2018/08/01/公钥加密的应用/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="首先依次安装好win10版本的MySQL和Java环境，并配置好PATH。我使用的IDE是IntelliJIDEA。  在IntelliJIDEA中建立一个简单的项目，命名为DBstu，测试可以正常Helloworld。  之后在项目中新建一个文件夹lib。在安装MySQL之后，可以在connector J 8.0文件夹下面找到MySQL的驱动包。将这个包复制到lib目录下。   使用快捷键Ctr">
+<meta property="og:description" content="因为我是信息安全专业的，面试的时候就经常被问到这个，很神奇…… 实际上光RSA的应用就太多了，说2个最最常见的吧 1. TLS/SSLTLS加密首先用公钥加密协商一个私钥出来。 之后用这个协商出来的私钥进行对称加密传输。 （以下摘自维基百科：）  为了生成会话密钥用于安全连接，客户端使用服务器的公钥加密随机生成的密钥，并将其发送到服务器，只有服务器才能使用自己的私钥解密。 利用随机数，双方生成用于">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2018/05/21/mySQL连接JDBC-Win10-idea-intellij/1.png">
-<meta property="og:image" content="http://yoursite.com/2018/05/21/mySQL连接JDBC-Win10-idea-intellij/2.png">
-<meta property="og:image" content="http://yoursite.com/2018/05/21/mySQL连接JDBC-Win10-idea-intellij/3.png">
-<meta property="og:image" content="http://yoursite.com/2018/05/21/mySQL连接JDBC-Win10-idea-intellij/4.png">
-<meta property="og:image" content="http://yoursite.com/2018/05/21/mySQL连接JDBC-Win10-idea-intellij/5.png">
-<meta property="og:image" content="http://yoursite.com/2018/05/21/mySQL连接JDBC-Win10-idea-intellij/6.png">
-<meta property="og:image" content="http://yoursite.com/2018/05/21/mySQL连接JDBC-Win10-idea-intellij/8.png">
-<meta property="og:updated_time" content="2019-04-19T13:23:22.286Z">
+<meta property="og:updated_time" content="2019-04-19T13:59:46.447Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mySQL连接JDBC (Win10+idea intellij)">
-<meta name="twitter:description" content="首先依次安装好win10版本的MySQL和Java环境，并配置好PATH。我使用的IDE是IntelliJIDEA。  在IntelliJIDEA中建立一个简单的项目，命名为DBstu，测试可以正常Helloworld。  之后在项目中新建一个文件夹lib。在安装MySQL之后，可以在connector J 8.0文件夹下面找到MySQL的驱动包。将这个包复制到lib目录下。   使用快捷键Ctr">
-<meta name="twitter:image" content="http://yoursite.com/2018/05/21/mySQL连接JDBC-Win10-idea-intellij/1.png">
+<meta name="twitter:title" content="公钥加密的应用">
+<meta name="twitter:description" content="因为我是信息安全专业的，面试的时候就经常被问到这个，很神奇…… 实际上光RSA的应用就太多了，说2个最最常见的吧 1. TLS/SSLTLS加密首先用公钥加密协商一个私钥出来。 之后用这个协商出来的私钥进行对称加密传输。 （以下摘自维基百科：）  为了生成会话密钥用于安全连接，客户端使用服务器的公钥加密随机生成的密钥，并将其发送到服务器，只有服务器才能使用自己的私钥解密。 利用随机数，双方生成用于">
   
     <link rel="alternate" href="/atom.xml" title type="application/atom+xml">
   
@@ -90,13 +82,13 @@
 
     <div class="row">
         <div class="col-sm-8 blog-main">
-          <article id="post-mySQL连接JDBC-Win10-idea-intellij" class="article article-type-post" itemscope itemprop="blogPost">
+          <article id="post-公钥加密的应用" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 class="article-title" itemprop="name">
-      mySQL连接JDBC (Win10+idea intellij)
+      公钥加密的应用
     </h1>
   
 
@@ -105,7 +97,7 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2018/05/21/mySQL连接JDBC-Win10-idea-intellij/" class="article-date"><time datetime="2018-05-21T12:55:04.000Z" itemprop="datePublished">2018-05-21</time></a>
+  <a href="/2018/08/01/公钥加密的应用/" class="article-date"><time datetime="2018-08-01T13:57:23.000Z" itemprop="datePublished">2018-08-01</time></a>
 </div>
 
     
@@ -116,22 +108,29 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>首先依次安装好win10版本的MySQL和Java环境，并配置好PATH。我使用的IDE是IntelliJIDEA。</p>
-<img src="/2018/05/21/mySQL连接JDBC-Win10-idea-intellij/1.png">
-<p>在IntelliJIDEA中建立一个简单的项目，命名为DBstu，测试可以正常Helloworld。</p>
-<img src="/2018/05/21/mySQL连接JDBC-Win10-idea-intellij/2.png">
-<p>之后在项目中新建一个文件夹lib。在安装MySQL之后，可以在connector J 8.0文件夹下面找到MySQL的驱动包。将这个包复制到lib目录下。</p>
-<img src="/2018/05/21/mySQL连接JDBC-Win10-idea-intellij/3.png">
-<img src="/2018/05/21/mySQL连接JDBC-Win10-idea-intellij/4.png">
-<p>使用快捷键Ctrl+Alt+Shift+S，并如图操作将其添加到项目中。</p>
-<p>点击Apply，此时我们实际上已经成功连接到数据库。</p>
-<img src="/2018/05/21/mySQL连接JDBC-Win10-idea-intellij/5.png">
-<p>此外还有另一种方法进行配置。这种方法较简单：首先我们打开intelliJ的database窗口并选中MySQL。</p>
-<img src="/2018/05/21/mySQL连接JDBC-Win10-idea-intellij/6.png">
-<p>之后进入设置界面进行设置。此处会提示下载缺失的驱动文件，并且很大几率下载失败。我们需要手动导入。从官网找到驱动，并使用快捷键Ctrl+Alt+Shift+S手工导入即可。</p>
+        <p>因为我是信息安全专业的，面试的时候就经常被问到这个，很神奇……</p>
+<p>实际上光RSA的应用就太多了，说2个最最常见的吧</p>
+<h3 id="1-TLS-SSL"><a href="#1-TLS-SSL" class="headerlink" title="1. TLS/SSL"></a>1. TLS/SSL</h3><p>TLS加密首先用公钥加密协商一个私钥出来。</p>
+<p>之后用这个协商出来的私钥进行对称加密传输。</p>
+<p>（以下摘自维基百科：）</p>
+<blockquote>
+<p>为了生成会话密钥用于安全连接，客户端使用服务器的公钥加密随机生成的密钥，并将其发送到服务器，只有服务器才能使用自己的私钥解密。</p>
+<p>利用随机数，双方生成用于加密和解密的对称密钥。这就是TLS协议的握手，握手完毕后的连接是安全的，直到连接（被）关闭。如果上述任何一个步骤失败，TLS握手过程就会失败，并且断开所有的连接。</p>
+</blockquote>
+<p>这样做的好处：</p>
+<ol>
+<li>因为公钥加密效率太低，实际传输时必须用对称加密。</li>
+<li>对称加密的密钥每次都会更换，由于公钥加密的特点，可以通过加密传递私钥。</li>
+</ol>
+<h3 id="2-SSH的RSA签名登录"><a href="#2-SSH的RSA签名登录" class="headerlink" title="2. SSH的RSA签名登录"></a>2. SSH的RSA签名登录</h3><p>这个在git中有非常广泛的应用，下面介绍一下原理：</p>
+<p>假设你有一台自己的PC，叫做A；一台服务器，叫做B。</p>
+<p>（*事实上，在我们使用github的时候，我们自己的电脑就是A，github就是B）</p>
+<p>你尝试在A上通过SSH登录B。但是每次都要输入SSH密钥，很麻烦，起的太简单又总有弱智破你的弱密钥来DDos，怎么办？</p>
+<p>简单，你可以在A上生成一对RSA公钥和密钥，分别存在两个文件里。</p>
+<p>然后，把公钥文件拷贝到B上，设置B成为能提供这个公钥的对应私钥的人就可以登录。</p>
+<p>（这个过程在github上也是手动的，github的settings中SSH选项里一般都有你之前设置的RSA，只不过你可能已经忘了）</p>
+<p>注意这里不是使用RSA加密信息，而是使用RSA签名来认证。</p>
 
-<p>我们可以通过点击TestConnection来验证是否已经成功：</p>
-<img src="/2018/05/21/mySQL连接JDBC-Win10-idea-intellij/8.png"> 
       
     </div>
 
@@ -141,7 +140,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/21/mySQL连接JDBC-Win10-idea-intellij/" data-id="cjuo55pxh0003bwuwr3s61995" class="article-share-link">
+      <a data-url="http://yoursite.com/2018/08/01/公钥加密的应用/" data-id="cjuo55pxx000bbwuwxdb2mrry" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -154,16 +153,16 @@
 <ul id="article-nav" class="nav nav-pills nav-justified">
   
   <li role="presentation">
-    <a href="/2018/05/16/VS2017-配置winpcap/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/07/31/解决go-get报错unrecognized-import-path的问题/" id="article-nav-older" class="article-nav-link-wrap">
       <i class="fa fa-chevron-left pull-left"></i>
-      <span class="article-nav-link-title">VS2017配置winpcap</span>
+      <span class="article-nav-link-title">解决go get报错unrecognized import path的问题</span>
     </a>
   </li>
   
   
   <li role="presentation">
-    <a href="/2018/05/23/二叉树非递归遍历的3种方法/" id="article-nav-newer" class="article-nav-link-wrap">
-      <span class="article-nav-link-title">二叉树非递归遍历的3种方法</span>
+    <a href="/2018/08/17/Ubuntu连接蓝牙鼠标/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">Ubuntu连接蓝牙鼠标</span>
       <i class="fa fa-chevron-right pull-right"></i>
     </a>
   </li>
