@@ -118,14 +118,13 @@
 </ul>
 <p>按照github上面的就都ok，缺什么module就安什么。如果安好之后，没有使用GPU，就是依赖没安装对。实际上就是tensorflow+cuda+cudnn没安装对。</p>
 <h2 id="安装tensorflow"><a href="#安装tensorflow" class="headerlink" title="安装tensorflow"></a>安装tensorflow</h2><p>要同时安装tensorflow和tensorflow-gpu，使用pip install就可以，但是因为cuda9.0只能和tensorflow r1.12.0使用，所以要指定tf版本。</p>
-<blockquote>
-<p>sudo pip install tensorflow==1.12.0 -i &lt;国内源&gt;<br>sudo pip3 install tensorflow-gpu==1.12.0 -i &lt;国内源&gt;<br>sudo pip install tensorflow==1.12.0 -i &lt;国内源&gt;<br>sudo pip3 install tensorflow-gpu==1.12.0 -i &lt;国内源&gt;</p>
-</blockquote>
-<p>安装好使用</p>
-<blockquote>
-<p>pip list | grep tensorflow</p>
-</blockquote>
-<p>查看，注意tensorflow和tensorflow gpu版要对应，tf-estimator也要对应。不行就全都卸载了重新安装。</p>
+<pre><code>sudo pip install tensorflow==1.12.0 -i &lt;国内源&gt;
+sudo pip3 install tensorflow-gpu==1.12.0 -i &lt;国内源&gt;
+sudo pip install tensorflow==1.12.0 -i &lt;国内源&gt;
+sudo pip3 install tensorflow-gpu==1.12.0 -i &lt;国内源&gt;
+</code></pre><p>安装好使用</p>
+<pre><code>pip list | grep tensorflow
+</code></pre><p>查看，注意tensorflow和tensorflow gpu版要对应，tf-estimator也要对应。不行就全都卸载了重新安装。</p>
 <p>验证方式也简单，</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python</span><br><span class="line">&gt;&gt;&gt; import tensorflow</span><br></pre></td></tr></table></figure>
 <p>不报错就好了。</p>
