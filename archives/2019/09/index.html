@@ -3,11 +3,11 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>程子威的博客</title>
+  <title>Archives: 2019/9 | 程子威的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="程子威的博客">
-<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+<meta property="og:url" content="http://yoursite.com/archives/2019/09/index.html">
 <meta property="og:site_name" content="程子威的博客">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -51,7 +51,7 @@
         
           <li><a class href="/index.html">Home</a></li>
         
-          <li><a class href="/archives/">Archives</a></li>
+          <li><a class="active" href="/archives/">Archives</a></li>
         
           <li><a class href="https://github.com/TimoTolkki1966">Github</a></li>
         
@@ -82,145 +82,39 @@
         <div class="col-sm-8 blog-main">
           
   
-    <article id="post-windows修改powershell和cmd的字体-颜色-透明度" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <header class="archive-article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/19/windows修改powershell和cmd的字体-颜色-透明度/">windows修改powershell和cmd的字体/颜色/透明度</a>
+      <a class="archive-article-title" href="/2019/09/25/why-the-c-compiler-is-written-by-c/">why the C compiler is written by C</a>
     </h1>
   
 
 
-  </header>
-
-  <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2018/03/19/windows修改powershell和cmd的字体-颜色-透明度/" class="article-date"><time datetime="2018-03-20T01:05:34.000Z" itemprop="datePublished">2018-03-19</time></a>
+  <a href="/2019/09/25/why-the-c-compiler-is-written-by-c/" class="archive-article-date"><time datetime="2019-09-25T18:47:22.000Z" itemprop="datePublished">September 25th</time></a>
 </div>
 
-    
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>之前在网上搜了很多也没有结果，后来突然发现只要点左上角的属性就OK了。。。</p>
-<p>这设计真的绝了，Windows系统里独一份，不是凑巧在stackoverflow看到，真的一辈子都发现不了</p>
-
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/19/windows修改powershell和cmd的字体-颜色-透明度/" data-id="ck0zmtuuh000aewuwtfu8o41y" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tech/">tech</a></li></ul>
-
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-windows安装pip" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/19/windows安装pip/">windows安装pip</a>
-    </h1>
-  
-
-
   </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/2018/01/19/windows安装pip/" class="article-date"><time datetime="2018-01-20T01:57:21.000Z" itemprop="datePublished">2018-01-19</time></a>
-</div>
-
-    
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>不确定这条po是不是准确，可能新版本安装python会自带pip</p>
-</blockquote>
-<p>之前都是用的linux预装的pip，没想到win10的pip安装这么费劲。</p>
-<ol>
-<li>首先确认安装了python，并且编辑用户变量里的path，目录是你python的安装地址</li>
-</ol>
-<img src="/2018/01/19/windows安装pip/1.png">
-<p>在win10中添加路径，最后不用加分号。</p>
-<ol start="2">
-<li>检查是否设置成功：运行cmd 输入python</li>
-</ol>
-<img src="/2018/01/19/windows安装pip/2.png">
-<p>但是在管理员模式下运行cmd，会提示找不到python命令，原因不明，但是我们可以不管：</p>
-<img src="/2018/01/19/windows安装pip/3.png">
-<ol start="3">
-<li>下载pip安装配置文件，官方文档地址：<a href="https://pip.pypa.io/en/stable/installing/" target="_blank" rel="noopener">https://pip.pypa.io/en/stable/installing/</a></li>
-</ol>
-<p>或者你可以直接打开这个网页，右键另存为，保存到C盘根目录：<a href="https://bootstrap.pypa.io/get-pip.py" target="_blank" rel="noopener">https://bootstrap.pypa.io/get-pip.py</a></p>
-<ol start="4">
-<li><p>打开管理员CMD（因为用户模式权限不足会安装失败），虽然我们不能运行python，但是可以直接通过以下命令来运行这个文件。</p>
-<p> cd C:\get-pip.py</p>
-</li>
-<li><p>安装之后再次设置环境变量，加上图中的第2行：</p>
-</li>
-</ol>
-<img src="/2018/01/19/windows安装pip/4.png">
-<p>就OK了。</p>
-
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/19/windows安装pip/" data-id="ck0zmtuvj000fewuw3dlmfprm" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tech/">tech</a></li></ul>
-
-
-    </footer>
-  </div>
-  
 </article>
 
-
-
+  
+  
+    </div></section>
   
 
-
-  <div id="page-nav">
-    <nav><ul class="pagination"><li><a class="page-prev" rel="prev" href="/page/2/"><i class="fa fa-chevron-left"></i> Prev</a></li><li><a class="page-number" href="/">1</a></li><li><a class="page-number" href="/page/2/">2</a></li><li class="active"><span class="page-number">3</span></li><li class="disabled"><span class="page-next">Next <i class="fa fa-chevron-right"></i></span></li></ul></nav>
-  </div>
 
 
 

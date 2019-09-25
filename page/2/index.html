@@ -82,6 +82,80 @@
         <div class="col-sm-8 blog-main">
           
   
+    <article id="post-公钥加密的应用" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/01/公钥加密的应用/">公钥加密的应用</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2018/08/01/公钥加密的应用/" class="article-date"><time datetime="2018-08-02T01:57:23.000Z" itemprop="datePublished">2018-08-01</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>因为我是信息安全专业的，面试的时候就经常被问到这个，很神奇……</p>
+<p>实际上光RSA的应用就太多了，说2个最最常见的吧</p>
+<h3 id="1-TLS-SSL"><a href="#1-TLS-SSL" class="headerlink" title="1. TLS/SSL"></a>1. TLS/SSL</h3><p>TLS加密首先用公钥加密协商一个私钥出来。</p>
+<p>之后用这个协商出来的私钥进行对称加密传输。</p>
+<p>（以下摘自维基百科：）</p>
+<blockquote>
+<p>为了生成会话密钥用于安全连接，客户端使用服务器的公钥加密随机生成的密钥，并将其发送到服务器，只有服务器才能使用自己的私钥解密。</p>
+<p>利用随机数，双方生成用于加密和解密的对称密钥。这就是TLS协议的握手，握手完毕后的连接是安全的，直到连接（被）关闭。如果上述任何一个步骤失败，TLS握手过程就会失败，并且断开所有的连接。</p>
+</blockquote>
+<p>这样做的好处：</p>
+<ol>
+<li>因为公钥加密效率太低，实际传输时必须用对称加密。</li>
+<li>对称加密的密钥每次都会更换，由于公钥加密的特点，可以通过加密传递私钥。</li>
+</ol>
+<h3 id="2-SSH的RSA签名登录"><a href="#2-SSH的RSA签名登录" class="headerlink" title="2. SSH的RSA签名登录"></a>2. SSH的RSA签名登录</h3><p>这个在git中有非常广泛的应用，下面介绍一下原理：</p>
+<p>假设你有一台自己的PC，叫做A；一台服务器，叫做B。</p>
+<p>（*事实上，在我们使用github的时候，我们自己的电脑就是A，github就是B）</p>
+<p>你尝试在A上通过SSH登录B。但是每次都要输入SSH密钥，很麻烦，起的太简单又总有弱智破你的弱密钥来DDos，怎么办？</p>
+<p>简单，你可以在A上生成一对RSA公钥和密钥，分别存在两个文件里。</p>
+<p>然后，把公钥文件拷贝到B上，设置B成为能提供这个公钥的对应私钥的人就可以登录。</p>
+<p>（这个过程在github上也是手动的，github的settings中SSH选项里一般都有你之前设置的RSA，只不过你可能已经忘了）</p>
+<p>注意这里不是使用RSA加密信息，而是使用RSA签名来认证。</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/01/公钥加密的应用/" data-id="ck0zmtuwo000pewuwym8reitj" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tech/">tech</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-解决go-get报错unrecognized-import-path的问题" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
@@ -134,7 +208,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/31/解决go-get报错unrecognized-import-path的问题/" data-id="ck0zmc5tv0010couw7qi6mr0o" class="article-share-link">
+      <a data-url="http://yoursite.com/2018/07/31/解决go-get报错unrecognized-import-path的问题/" data-id="ck0zmtuym000zewuwpf8q99o3" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -199,7 +273,7 @@ sudo pat upgrade
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/11/更换apt源/" data-id="ck0zmc5sn000ncouw2izmmgiu" class="article-share-link">
+      <a data-url="http://yoursite.com/2018/07/11/更换apt源/" data-id="ck0zmtuyx0011ewuwrgwhno5c" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -259,7 +333,7 @@ sudo pat upgrade
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/19/srt字幕格式转txt文本/" data-id="ck0zmc5ry0008couwmqjdbfx0" class="article-share-link">
+      <a data-url="http://yoursite.com/2018/06/19/srt字幕格式转txt文本/" data-id="ck0zmtutc0005ewuw4mobkw2l" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -396,7 +470,7 @@ WSACleanup();
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/25/winsock学习101/" data-id="ck0zmc5u30014couwhu7234sb" class="article-share-link">
+      <a data-url="http://yoursite.com/2018/05/25/winsock学习101/" data-id="ck0zmtuzb0013ewuweox4lffy" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -457,7 +531,7 @@ WSACleanup();
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/23/二叉树非递归遍历的3种方法/" data-id="ck0zmc5sb000fcouwt2e73fg5" class="article-share-link">
+      <a data-url="http://yoursite.com/2018/05/23/二叉树非递归遍历的3种方法/" data-id="ck0zmtuvs000hewuwmmfhk9ij" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -524,7 +598,7 @@ WSACleanup();
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/21/mySQL连接JDBC-Win10-idea-intellij/" data-id="ck0zmc5rg0001couw6sgus50n" class="article-share-link">
+      <a data-url="http://yoursite.com/2018/05/21/mySQL连接JDBC-Win10-idea-intellij/" data-id="ck0zmtus10003ewuwjwt47bbt" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -595,7 +669,7 @@ WSACleanup();
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/16/VS2017-配置winpcap/" data-id="ck0zmc5s7000dcouw1x95vi5x" class="article-share-link">
+      <a data-url="http://yoursite.com/2018/05/16/VS2017-配置winpcap/" data-id="ck0zmtuq70000ewuw18ksxf6c" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -669,7 +743,7 @@ WSACleanup();
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/19/译介：dropbox是怎么存储密码的/" data-id="ck0zmc5ui0017couwcea7ciyq" class="article-share-link">
+      <a data-url="http://yoursite.com/2018/04/19/译介：dropbox是怎么存储密码的/" data-id="ck0zmtv0v0018ewuws8oh0epv" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -753,61 +827,7 @@ WSACleanup();
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/28/REST学习笔记/" data-id="ck0zmc5rt0005couwkonu219e" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tech/">tech</a></li></ul>
-
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-windows修改powershell和cmd的字体-颜色-透明度" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/19/windows修改powershell和cmd的字体-颜色-透明度/">windows修改powershell和cmd的字体/颜色/透明度</a>
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/2018/03/19/windows修改powershell和cmd的字体-颜色-透明度/" class="article-date"><time datetime="2018-03-20T01:05:34.000Z" itemprop="datePublished">2018-03-19</time></a>
-</div>
-
-    
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>之前在网上搜了很多也没有结果，后来突然发现只要点左上角的属性就OK了。。。</p>
-<p>这设计真的绝了，Windows系统里独一份，不是凑巧在stackoverflow看到，真的一辈子都发现不了</p>
-
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/19/windows修改powershell和cmd的字体-颜色-透明度/" data-id="ck0zmc5tz0012couwc7sbzrez" class="article-share-link">
+      <a data-url="http://yoursite.com/2018/03/28/REST学习笔记/" data-id="ck0zmtuqt0001ewuwmci7u77j" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -855,7 +875,7 @@ WSACleanup();
   
   <div class="sidebar-module">
     <h4>Archives</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/05/">May 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/05/">May 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/04/">April 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">1</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/09/">September 2019</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/05/">May 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/05/">May 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/04/">April 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">1</span></li></ul>
   </div>
 
 
@@ -864,6 +884,10 @@ WSACleanup();
   <div class="sidebar-module">
     <h4>Recents</h4>
     <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2019/09/25/why-the-c-compiler-is-written-by-c/">why the C compiler is written by C</a>
+        </li>
       
         <li>
           <a href="/2019/05/21/tf-Faster-RCNN安装排坑/">tf-Faster-RCNN安装排坑</a>
@@ -879,10 +903,6 @@ WSACleanup();
       
         <li>
           <a href="/2019/04/20/设置hexo的favicon/">设置hexo的favicon</a>
-        </li>
-      
-        <li>
-          <a href="/2019/04/20/github-pages使用自定义404界面/">github pages使用自定义404界面</a>
         </li>
       
     </ul>
