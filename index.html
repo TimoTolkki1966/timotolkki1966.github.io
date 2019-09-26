@@ -82,13 +82,73 @@
         <div class="col-sm-8 blog-main">
           
   
+    <article id="post-C-vector-STL-CheatSheet" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/26/C-vector-STL-CheatSheet/">C++ vector STL CheatSheet</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2019/09/26/C-vector-STL-CheatSheet/" class="article-date"><time datetime="2019-09-26T20:53:37.000Z" itemprop="datePublished">2019-09-26</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank" rel="noopener">markdown cheatsheet</a></p>
+<p>One thing confusing about vector (and other container in C++) is that you do not know wether you should use the iterator or integer as the argument.</p>
+<p>For example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reference at (size_type n);</span><br><span class="line"></span><br><span class="line">iterator erase (iterator position);</span><br></pre></td></tr></table></figure>
+<p>The <code>v.at()</code> takes a (normally) integer indicating the index of the postion, while <code>v.erase()</code> takes an iterator.</p>
+<p>I think there is a (hidden) rule that makes it easy for the developer to tell what type they should send to the function. But i have not found that rule yet. </p>
+<p>Anyway, the cheatsheet:</p>
+<h3 id="reference-at-size-type-n"><a href="#reference-at-size-type-n" class="headerlink" title="reference at (size_type n);"></a>reference at (size_type n);</h3><p><code>myvector.at(i)=i;</code></p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/26/C-vector-STL-CheatSheet/" data-id="ck116s3t10018souw7luw0uqf" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/english/">english</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tech/">tech</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-why-the-c-compiler-is-written-by-c" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/25/why-the-c-compiler-is-written-by-c/">Why the C compiler is written by C</a>
+      <a class="article-title" href="/2019/09/25/why-the-c-compiler-is-written-by-c/">How the C compiler is written by C</a>
     </h1>
   
 
@@ -124,7 +184,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/25/why-the-c-compiler-is-written-by-c/" data-id="ck0zmtuwj000newuw4wf5gtjc" class="article-share-link">
+      <a data-url="http://yoursite.com/2019/09/25/why-the-c-compiler-is-written-by-c/" data-id="ck116s3oe000esouw7i9d2d4m" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -203,7 +263,7 @@ sudo pip3 install tensorflow-gpu==1.12.0 -i &lt;国内源&gt;
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/21/tf-Faster-RCNN安装排坑/" data-id="ck0zmtuvf000dewuwzzfq2ltz" class="article-share-link">
+      <a data-url="http://yoursite.com/2019/05/21/tf-Faster-RCNN安装排坑/" data-id="ck116s3oo000gsouw3lf242da" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -271,7 +331,7 @@ sudo pip3 install tensorflow-gpu==1.12.0 -i &lt;国内源&gt;
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/06/让你的所有网页都有同样的header和footer/" data-id="ck0zmtuyf000xewuwhs28j34h" class="article-share-link">
+      <a data-url="http://yoursite.com/2019/05/06/让你的所有网页都有同样的header和footer/" data-id="ck116s3ri0012souweho31gxa" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -339,7 +399,7 @@ sudo pip3 install tensorflow-gpu==1.12.0 -i &lt;国内源&gt;
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/04/使用golang搭建server并在前端获取输出/" data-id="ck0zmtuwd000lewuwox35y0um" class="article-share-link">
+      <a data-url="http://yoursite.com/2019/05/04/使用golang搭建server并在前端获取输出/" data-id="ck116s3q8000ssouwv1i8z503" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -399,7 +459,7 @@ favicon: /image/favicon.ico
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/20/设置hexo的favicon/" data-id="ck0zmtuy1000vewuwjsw4e2rj" class="article-share-link">
+      <a data-url="http://yoursite.com/2019/04/20/设置hexo的favicon/" data-id="ck116s3r7000ysouwiejyrbdk" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -458,7 +518,7 @@ favicon: /image/favicon.ico
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/20/github-pages使用自定义404界面/" data-id="ck0zmtusz0004ewuwtcyvta0f" class="article-share-link">
+      <a data-url="http://yoursite.com/2019/04/20/github-pages使用自定义404界面/" data-id="ck116s3lx0004souw4gsh6gl0" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -514,7 +574,7 @@ favicon: /image/favicon.ico
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/19/博客迁移到了Hexo/" data-id="ck0zmtuxv000uewuwuzfydfu4" class="article-share-link">
+      <a data-url="http://yoursite.com/2019/04/19/博客迁移到了Hexo/" data-id="ck116s3so0017souw3mlvnw9e" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -574,7 +634,7 @@ favicon: /image/favicon.ico
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/05/使用crontab/" data-id="ck0zmtuvy000jewuw59kncbhc" class="article-share-link">
+      <a data-url="http://yoursite.com/2018/11/05/使用crontab/" data-id="ck116s3pv000osouwfycdq65t" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -643,60 +703,7 @@ favicon: /image/favicon.ico
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/31/使用Gparted更改Ubuntu分区大小/" data-id="ck0zmtuzi0015ewuwovfsfyut" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tech/">tech</a></li></ul>
-
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Ubuntu连接蓝牙鼠标" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/17/Ubuntu连接蓝牙鼠标/">Ubuntu连接蓝牙鼠标</a>
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/2018/08/17/Ubuntu连接蓝牙鼠标/" class="article-date"><time datetime="2018-08-17T21:16:19.000Z" itemprop="datePublished">2018-08-17</time></a>
-</div>
-
-    
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>自带的GUI界面实在不好用。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ sudo -i</span><br><span class="line"># bluetoothctl</span><br><span class="line">[bluetooth]# power off</span><br><span class="line">[bluetooth]# power on</span><br><span class="line">[bluetooth]# scan on</span><br><span class="line">[bluetooth]# connect XX:XX:XX:XX:XX:XX</span><br><span class="line">[Arc Touch Mouse SE]# trust</span><br><span class="line">[Arc Touch Mouse SE]# pair</span><br><span class="line">[Arc Touch Mouse SE]# unblock</span><br><span class="line">[Arc Touch Mouse SE]# power off</span><br><span class="line">[bluetooth]# power on</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/17/Ubuntu连接蓝牙鼠标/" data-id="ck0zmtuu40008ewuwllny6cud" class="article-share-link">
+      <a data-url="http://yoursite.com/2018/08/31/使用Gparted更改Ubuntu分区大小/" data-id="ck116s3q3000qsouwj2ze4isy" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -736,7 +743,7 @@ favicon: /image/favicon.ico
   
   <div class="sidebar-module">
     <h4>Tags</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/english/">english</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/tech/">tech</a><span class="sidebar-module-list-count">22</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/english/">english</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/tech/">tech</a><span class="sidebar-module-list-count">23</span></li></ul>
   </div>
 
 
@@ -744,7 +751,7 @@ favicon: /image/favicon.ico
   
   <div class="sidebar-module">
     <h4>Archives</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/09/">September 2019</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/05/">May 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/05/">May 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/04/">April 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">1</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/09/">September 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/05/">May 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/05/">May 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/04/">April 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">1</span></li></ul>
   </div>
 
 
@@ -755,7 +762,11 @@ favicon: /image/favicon.ico
     <ul class="sidebar-module-list">
       
         <li>
-          <a href="/2019/09/25/why-the-c-compiler-is-written-by-c/">Why the C compiler is written by C</a>
+          <a href="/2019/09/26/C-vector-STL-CheatSheet/">C++ vector STL CheatSheet</a>
+        </li>
+      
+        <li>
+          <a href="/2019/09/25/why-the-c-compiler-is-written-by-c/">How the C compiler is written by C</a>
         </li>
       
         <li>
@@ -768,10 +779,6 @@ favicon: /image/favicon.ico
       
         <li>
           <a href="/2019/05/04/使用golang搭建server并在前端获取输出/">使用golang搭建server并在前端获取输出</a>
-        </li>
-      
-        <li>
-          <a href="/2019/04/20/设置hexo的favicon/">设置hexo的favicon</a>
         </li>
       
     </ul>
