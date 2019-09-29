@@ -3,15 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Archives: 2018/6 | Cheng&#39;s Blog</title>
+  <title>sort() in C++ | Cheng&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Cheng&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/06/index.html">
+  <meta name="description" content="sort() function is very useful in C++. For reference you can find it at here: cplusplus.com.This page introduced the basic, but it will get error report if you use it in a class.  This blog explained">
+<meta name="keywords" content="tech,english">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sort() in C++">
+<meta property="og:url" content="http://yoursite.com/2019/09/29/sort-in-C/index.html">
 <meta property="og:site_name" content="Cheng&#39;s Blog">
+<meta property="og:description" content="sort() function is very useful in C++. For reference you can find it at here: cplusplus.com.This page introduced the basic, but it will get error report if you use it in a class.  This blog explained">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-09-29T23:26:29.398Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cheng&#39;s Blog">
+<meta name="twitter:title" content="sort() in C++">
+<meta name="twitter:description" content="sort() function is very useful in C++. For reference you can find it at here: cplusplus.com.This page introduced the basic, but it will get error report if you use it in a class.  This blog explained">
   
     <link rel="alternate" href="/atom.xml" title="Cheng&#39;s Blog" type="application/atom+xml">
   
@@ -51,7 +56,7 @@
         
           <li><a class href="/index.html">Home</a></li>
         
-          <li><a class="active" href="/archives/">Archives</a></li>
+          <li><a class href="/archives/">Archives</a></li>
         
           <li><a class href="https://github.com/zw-cheng">Github</a></li>
         
@@ -80,40 +85,82 @@
 
     <div class="row">
         <div class="col-sm-8 blog-main">
-          
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <header class="archive-article-header">
+          <article id="post-sort-in-C" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
     
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/19/srt字幕格式转txt文本/">.srt字幕格式转txt文本</a>
+    <h1 class="article-title" itemprop="name">
+      sort() in C++
     </h1>
   
 
 
+  </header>
+
+  <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2018/06/19/srt字幕格式转txt文本/" class="archive-article-date"><time datetime="2018-06-19T23:42:08.000Z" itemprop="datePublished">June 19th</time></a>
+  <a href="/2019/09/29/sort-in-C/" class="article-date"><time datetime="2019-09-29T23:11:25.000Z" itemprop="datePublished">2019-09-29</time></a>
 </div>
 
-  </header>
-</article>
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>sort() function is very useful in C++.</p>
+<p>For reference you can find it at here: <a href="http://www.cplusplus.com/reference/algorithm/sort/" target="_blank" rel="noopener">cplusplus.com</a>.<br>This page introduced the basic, but it will get error report if you use it in a class. </p>
+<p>This <a href="https://taifua.com/cpp-sort-problem.html" target="_blank" rel="noopener">blog</a> explained in detail why this happened. In short, we should change it into</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">static comp(const int &amp;a, const int &amp;b)&#123;</span><br><span class="line">    return (a&lt;b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Why do we need to add <code>static</code> and <code>const</code>? </p>
+<ol>
+<li>static</li>
+</ol>
+<p>We need to add <code>static</code> before the function definition bacause the pointer of static function in a class is different from the pointer of non-static funtion. A non-static function in a class is somehow related to the class and this pointer.</p>
+<ol start="2">
+<li>const</li>
+</ol>
+<p>Simply because the sort() function cannot change the value of the parameters.</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/29/sort-in-C/" data-id="ck15m5hze0003bcuw65g33lx1" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/english/">english</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tech/">tech</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2019/09/26/C-vector-STL-CheatSheet/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">C++ vector STL CheatSheet</span>
+    </a>
+  </li>
+  
+  
+</ul>
+
 
   
-  
-    </div></section>
-  
+</article>
 
 
 

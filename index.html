@@ -82,6 +82,71 @@
         <div class="col-sm-8 blog-main">
           
   
+    <article id="post-sort-in-C" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/29/sort-in-C/">sort() in C++</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2019/09/29/sort-in-C/" class="article-date"><time datetime="2019-09-29T23:11:25.000Z" itemprop="datePublished">2019-09-29</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>sort() function is very useful in C++.</p>
+<p>For reference you can find it at here: <a href="http://www.cplusplus.com/reference/algorithm/sort/" target="_blank" rel="noopener">cplusplus.com</a>.<br>This page introduced the basic, but it will get error report if you use it in a class. </p>
+<p>This <a href="https://taifua.com/cpp-sort-problem.html" target="_blank" rel="noopener">blog</a> explained in detail why this happened. In short, we should change it into</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">static comp(const int &amp;a, const int &amp;b)&#123;</span><br><span class="line">    return (a&lt;b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Why do we need to add <code>static</code> and <code>const</code>? </p>
+<ol>
+<li>static</li>
+</ol>
+<p>We need to add <code>static</code> before the function definition bacause the pointer of static function in a class is different from the pointer of non-static funtion. A non-static function in a class is somehow related to the class and this pointer.</p>
+<ol start="2">
+<li>const</li>
+</ol>
+<p>Simply because the sort() function cannot change the value of the parameters.</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/29/sort-in-C/" data-id="ck15m5hze0003bcuw65g33lx1" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/english/">english</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tech/">tech</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-C-vector-STL-CheatSheet" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
@@ -126,7 +191,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/26/C-vector-STL-CheatSheet/" data-id="ck116s3t10018souw7luw0uqf" class="article-share-link">
+      <a data-url="http://yoursite.com/2019/09/26/C-vector-STL-CheatSheet/" data-id="ck15m5i2r000ibcuwv8dp13ru" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -184,7 +249,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/25/why-the-c-compiler-is-written-by-c/" data-id="ck116s3oe000esouw7i9d2d4m" class="article-share-link">
+      <a data-url="http://yoursite.com/2019/09/25/why-the-c-compiler-is-written-by-c/" data-id="ck15m5i2d000fbcuwxxovw235" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -263,7 +328,7 @@ sudo pip3 install tensorflow-gpu==1.12.0 -i &lt;国内源&gt;
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/21/tf-Faster-RCNN安装排坑/" data-id="ck116s3oo000gsouw3lf242da" class="article-share-link">
+      <a data-url="http://yoursite.com/2019/05/21/tf-Faster-RCNN安装排坑/" data-id="ck15m5i150008bcuwfrv5ex90" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -331,7 +396,7 @@ sudo pip3 install tensorflow-gpu==1.12.0 -i &lt;国内源&gt;
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/06/让你的所有网页都有同样的header和footer/" data-id="ck116s3ri0012souweho31gxa" class="article-share-link">
+      <a data-url="http://yoursite.com/2019/05/06/让你的所有网页都有同样的header和footer/" data-id="ck15m5i4k0013bcuwb0gm624m" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -399,7 +464,7 @@ sudo pip3 install tensorflow-gpu==1.12.0 -i &lt;国内源&gt;
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/04/使用golang搭建server并在前端获取输出/" data-id="ck116s3q8000ssouwv1i8z503" class="article-share-link">
+      <a data-url="http://yoursite.com/2019/05/04/使用golang搭建server并在前端获取输出/" data-id="ck15m5i3y000rbcuwdca31ofs" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -459,7 +524,7 @@ favicon: /image/favicon.ico
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/20/设置hexo的favicon/" data-id="ck116s3r7000ysouwiejyrbdk" class="article-share-link">
+      <a data-url="http://yoursite.com/2019/04/20/设置hexo的favicon/" data-id="ck15m5i4c000xbcuwd6g8v3ff" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -518,7 +583,7 @@ favicon: /image/favicon.ico
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/20/github-pages使用自定义404界面/" data-id="ck116s3lx0004souw4gsh6gl0" class="article-share-link">
+      <a data-url="http://yoursite.com/2019/04/20/github-pages使用自定义404界面/" data-id="ck15m5i21000dbcuw4ulk6hqs" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -574,7 +639,7 @@ favicon: /image/favicon.ico
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/19/博客迁移到了Hexo/" data-id="ck116s3so0017souw3mlvnw9e" class="article-share-link">
+      <a data-url="http://yoursite.com/2019/04/19/博客迁移到了Hexo/" data-id="ck15m5i4a000vbcuwpmyziok3" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -634,76 +699,7 @@ favicon: /image/favicon.ico
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/05/使用crontab/" data-id="ck116s3pv000osouwfycdq65t" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tech/">tech</a></li></ul>
-
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-使用Gparted更改Ubuntu分区大小" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/31/使用Gparted更改Ubuntu分区大小/">使用Gparted更改Ubuntu分区大小</a>
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/2018/08/31/使用Gparted更改Ubuntu分区大小/" class="article-date"><time datetime="2018-08-31T23:54:07.000Z" itemprop="datePublished">2018-08-31</time></a>
-</div>
-
-    
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天上去一看根目录下的20G全都满了，chrome都打不开</p>
-<p>而/home下200G才用了20G，正好之前瞎分配的200M /boot也不够，全改了正好。</p>
-<p>说起来步骤是真的简单，甚至和windows一样简单。</p>
-<ol>
-<li><p>按照之前安装ubuntu的方法一样，把ubuntu16.04的iso写进去</p>
-</li>
-<li><p>启动，选择try ubuntu</p>
-</li>
-<li><p>看看有没有安装gparted，万一没有，直接apt安装就好了</p>
-</li>
-<li><p>傻瓜操作，<a href="https://gparted.org/display-doc.php%3Fname%3Dmoving-space-between-partitions" target="_blank" rel="noopener">https://gparted.org/display-doc.php%3Fname%3Dmoving-space-between-partitions</a></p>
-</li>
-</ol>
-<p>有报警也无所谓，不用管</p>
-<ol start="5">
-<li>完成后U盘拔掉，直接重启，完成</li>
-</ol>
-
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/31/使用Gparted更改Ubuntu分区大小/" data-id="ck116s3q3000qsouwj2ze4isy" class="article-share-link">
+      <a data-url="http://yoursite.com/2018/11/05/使用crontab/" data-id="ck15m5i3m000nbcuwd1d61xgc" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -743,7 +739,7 @@ favicon: /image/favicon.ico
   
   <div class="sidebar-module">
     <h4>Tags</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/english/">english</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/tech/">tech</a><span class="sidebar-module-list-count">23</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/english/">english</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/tech/">tech</a><span class="sidebar-module-list-count">24</span></li></ul>
   </div>
 
 
@@ -751,7 +747,7 @@ favicon: /image/favicon.ico
   
   <div class="sidebar-module">
     <h4>Archives</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/09/">September 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/05/">May 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/05/">May 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/04/">April 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">1</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/09/">September 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/05/">May 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/05/">May 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/04/">April 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">1</span></li></ul>
   </div>
 
 
@@ -760,6 +756,10 @@ favicon: /image/favicon.ico
   <div class="sidebar-module">
     <h4>Recents</h4>
     <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2019/09/29/sort-in-C/">sort() in C++</a>
+        </li>
       
         <li>
           <a href="/2019/09/26/C-vector-STL-CheatSheet/">C++ vector STL CheatSheet</a>
@@ -775,10 +775,6 @@ favicon: /image/favicon.ico
       
         <li>
           <a href="/2019/05/06/让你的所有网页都有同样的header和footer/">让你的所有网页都有同样的header和footer</a>
-        </li>
-      
-        <li>
-          <a href="/2019/05/04/使用golang搭建server并在前端获取输出/">使用golang搭建server并在前端获取输出</a>
         </li>
       
     </ul>
