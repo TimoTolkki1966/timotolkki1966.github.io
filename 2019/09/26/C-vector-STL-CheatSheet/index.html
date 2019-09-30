@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Cheng&#39;s Blog">
 <meta property="og:description" content="markdown cheatsheet One thing confusing about vector (and other container in C++) is that you do not know wether you should use the iterator or integer as the argument. For example: 123reference at (s">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-26T21:05:20.787Z">
+<meta property="og:updated_time" content="2019-09-29T23:39:52.267Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ vector STL CheatSheet">
 <meta name="twitter:description" content="markdown cheatsheet One thing confusing about vector (and other container in C++) is that you do not know wether you should use the iterator or integer as the argument. For example: 123reference at (s">
@@ -118,7 +118,10 @@
 <p>The <code>v.at()</code> takes a (normally) integer indicating the index of the postion, while <code>v.erase()</code> takes an iterator.</p>
 <p>I think there is a (hidden) rule that makes it easy for the developer to tell what type they should send to the function. But i have not found that rule yet. </p>
 <p>Anyway, the cheatsheet:</p>
-<h3 id="reference-at-size-type-n"><a href="#reference-at-size-type-n" class="headerlink" title="reference at (size_type n);"></a>reference at (size_type n);</h3><p><code>myvector.at(i)=i;</code></p>
+<p>some functions do operations that do not have a return value, or they’re simply retriving property of the vector. These are:</p>
+<h3 id="reference-at-size-type-n"><a href="#reference-at-size-type-n" class="headerlink" title="reference at (size_type n);"></a>reference at (size_type n);</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myvector.at(i)=i;</span><br></pre></td></tr></table></figure>
+<p>This basiclly do the same as <code>v[i]</code>, except that <code>v.at(i)</code> can check <strong>if the index i is out of range</strong><br>and throw an exception.</p>
+<h3 id="void-push-back-const-value-type-amp-val"><a href="#void-push-back-const-value-type-amp-val" class="headerlink" title="void push_back (const value_type&amp; val);"></a>void push_back (const value_type&amp; val);</h3><p>Thi</p>
 
       
     </div>
@@ -129,7 +132,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/26/C-vector-STL-CheatSheet/" data-id="ck15m5i2r000ibcuwv8dp13ru" class="article-share-link">
+      <a data-url="http://yoursite.com/2019/09/26/C-vector-STL-CheatSheet/" data-id="ck160cwel000ig0uwj7bf03gr" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -183,7 +186,7 @@
   
   <div class="sidebar-module">
     <h4>Tags</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/english/">english</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/tech/">tech</a><span class="sidebar-module-list-count">24</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/english/">english</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/tech/">tech</a><span class="sidebar-module-list-count">25</span></li></ul>
   </div>
 
 
@@ -191,7 +194,7 @@
   
   <div class="sidebar-module">
     <h4>Archives</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/09/">September 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/05/">May 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/05/">May 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/04/">April 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">1</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/09/">September 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/05/">May 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/05/">May 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/04/">April 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">1</span></li></ul>
   </div>
 
 
@@ -200,6 +203,10 @@
   <div class="sidebar-module">
     <h4>Recents</h4>
     <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2019/09/30/Different-between-shell-and-bash/">Difference between shell and bash</a>
+        </li>
       
         <li>
           <a href="/2019/09/29/sort-in-C/">sort() in C++</a>
@@ -215,10 +222,6 @@
       
         <li>
           <a href="/2019/05/21/tf-Faster-RCNN安装排坑/">tf-Faster-RCNN安装排坑</a>
-        </li>
-      
-        <li>
-          <a href="/2019/05/06/让你的所有网页都有同样的header和footer/">让你的所有网页都有同样的header和footer</a>
         </li>
       
     </ul>

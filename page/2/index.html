@@ -82,6 +82,66 @@
         <div class="col-sm-8 blog-main">
           
   
+    <article id="post-使用crontab" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/05/使用crontab/">使用crontab</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2018/11/05/使用crontab/" class="article-date"><time datetime="2018-11-06T00:34:56.000Z" itemprop="datePublished">2018-11-05</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>crontab（好像有的linux发行版叫cron）的作用是规定的时间内执行某个命令。<br>当初学这个是为了每天整点执行签到脚本。</p>
+<h2 id="添加任务"><a href="#添加任务" class="headerlink" title="添加任务"></a>添加任务</h2><pre><code>crontab -e
+</code></pre><h2 id="时间格式：（每个整点执行myshell-sh）"><a href="#时间格式：（每个整点执行myshell-sh）" class="headerlink" title="时间格式：（每个整点执行myshell.sh）"></a>时间格式：（每个整点执行myshell.sh）</h2><pre><code>0 * * * * . /etc/profile; /bin/bash /home/myshell.sh
+</code></pre><p>注意必须指定sh路径</p>
+<p>脚本文件中必须使用<strong>绝对路径</strong>，否则会使用的路径是~/</p>
+<h2 id="查看任务"><a href="#查看任务" class="headerlink" title="查看任务"></a>查看任务</h2><pre><code>crontab -l
+</code></pre><p>不放心就重启一下服务</p>
+<pre><code>sudo service cron restart
+</code></pre>
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/11/05/使用crontab/" data-id="ck160cwet000kg0uwmdls84e9" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tech/">tech</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-使用Gparted更改Ubuntu分区大小" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
@@ -135,7 +195,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/31/使用Gparted更改Ubuntu分区大小/" data-id="ck15m5i32000kbcuwv3tsmmwj" class="article-share-link">
+      <a data-url="http://yoursite.com/2018/08/31/使用Gparted更改Ubuntu分区大小/" data-id="ck160cwfa000sg0uwprrr8m3x" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -188,7 +248,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/17/Ubuntu连接蓝牙鼠标/" data-id="ck15m5i0f0005bcuwptujhxpx" class="article-share-link">
+      <a data-url="http://yoursite.com/2018/08/17/Ubuntu连接蓝牙鼠标/" data-id="ck160cwdn0004g0uwz511kg6l" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -262,7 +322,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/01/公钥加密的应用/" data-id="ck15m5i52001cbcuwwyv8yovd" class="article-share-link">
+      <a data-url="http://yoursite.com/2018/08/01/公钥加密的应用/" data-id="ck160cwfe000ug0uwfac9emu9" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -330,7 +390,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/31/解决go-get报错unrecognized-import-path的问题/" data-id="ck15m5i4f000zbcuwhg777mkc" class="article-share-link">
+      <a data-url="http://yoursite.com/2018/07/31/解决go-get报错unrecognized-import-path的问题/" data-id="ck160cwft0012g0uwka4rfokx" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -395,7 +455,7 @@ sudo pat upgrade
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/11/更换apt源/" data-id="ck15m5i4h0011bcuwji6t8iz5" class="article-share-link">
+      <a data-url="http://yoursite.com/2018/07/11/更换apt源/" data-id="ck160cwg20016g0uwm2yezoeb" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -455,7 +515,7 @@ sudo pat upgrade
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/19/srt字幕格式转txt文本/" data-id="ck15m5i1j000abcuwn0csj4yh" class="article-share-link">
+      <a data-url="http://yoursite.com/2018/06/19/srt字幕格式转txt文本/" data-id="ck160cwdq0005g0uwv538ge1f" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -592,7 +652,7 @@ WSACleanup();
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/25/winsock学习101/" data-id="ck15m5i54001dbcuwua349gc2" class="article-share-link">
+      <a data-url="http://yoursite.com/2018/05/25/winsock学习101/" data-id="ck160cwh1001gg0uwtvspjjkc" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -653,7 +713,7 @@ WSACleanup();
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/23/二叉树非递归遍历的3种方法/" data-id="ck15m5i42000tbcuw5yiqenxz" class="article-share-link">
+      <a data-url="http://yoursite.com/2018/05/23/二叉树非递归遍历的3种方法/" data-id="ck160cwf3000og0uwdqzv2ylv" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -720,78 +780,7 @@ WSACleanup();
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/21/mySQL连接JDBC-Win10-idea-intellij/" data-id="ck15m5hzt0004bcuwcboal36h" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tech/">tech</a></li></ul>
-
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-VS2017-配置winpcap" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/16/VS2017-配置winpcap/">VS2017配置winpcap</a>
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/2018/05/16/VS2017-配置winpcap/" class="article-date"><time datetime="2018-05-17T01:14:12.000Z" itemprop="datePublished">2018-05-16</time></a>
-</div>
-
-    
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>系统信息： 64位 Win10</p>
-</blockquote>
-<p>首先看下面教程：</p>
-<p><a href="http://www.ferrisxu.com/WinPcap/html/index.html" target="_blank" rel="noopener">winpcap教程</a></p>
-<h3 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h3><ol>
-<li>安装winpcap</li>
-<li>下载wpdpack</li>
-<li>启动vs2017</li>
-<li>新建visual C++ 空项目</li>
-<li>项目-&gt;属性-&gt;左侧配置属性-&gt;VC++目录，修改包含目录和库目录到wpdpack的include和lib</li>
-<li>项目-&gt;属性-&gt;C/C++-&gt;预处理器-&gt;预处理器定义，添加_XKEYCHECK_H；HAVE_REMOT</li>
-<li>项目-&gt;属性-&gt;链接器-&gt;输入-&gt;附加依赖项，添加Packet.lib;wpcap.lib</li>
-<li>复制查看设备列表，看能否运行</li>
-</ol>
-<h3 id="可能存在的问题："><a href="#可能存在的问题：" class="headerlink" title="可能存在的问题："></a>可能存在的问题：</h3><h4 id="报错：无法打开源文件sys-time-h和u-int"><a href="#报错：无法打开源文件sys-time-h和u-int" class="headerlink" title="报错：无法打开源文件sys/time.h和u_int"></a>报错：无法打开源文件sys/time.h和u_int</h4><p>原因：这些都是unix系统的东西，需要在主文件中指明是windows系统：</p>
-<pre><code>#define WIN32
-</code></pre><h4 id="报错：找不到源文件stdafx-h"><a href="#报错：找不到源文件stdafx-h" class="headerlink" title="报错：找不到源文件stdafx.h"></a>报错：找不到源文件stdafx.h</h4><p>原因：已经再预编译头中定义，不需要多余include</p>
-<p>中文手册的例程可能有问题，这个是我能运行的程序：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">#define WIN32</span><br><span class="line"></span><br><span class="line">#include &quot;pcap.h&quot;</span><br><span class="line">#include &quot;windows.h&quot;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">#pragma comment(lib,&quot;wpcap.lib&quot;)</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	pcap_if_t *alldevs;</span><br><span class="line">	pcap_if_t *d;</span><br><span class="line">	int i = 0;</span><br><span class="line">	char errbuf[PCAP_ERRBUF_SIZE];</span><br><span class="line"></span><br><span class="line">	/* 获取本地机器设备列表 */</span><br><span class="line">	if (pcap_findalldevs_ex(PCAP_SRC_IF_STRING, NULL /* auth is not needed */, &amp;alldevs, errbuf) == -1)</span><br><span class="line">	&#123;</span><br><span class="line">		fprintf(stderr, &quot;Error in pcap_findalldevs_ex: %s\n&quot;, errbuf);</span><br><span class="line">		exit(1);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/* 打印列表 */</span><br><span class="line">	for (d = alldevs; d != NULL; d = d-&gt;next)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;%d. %s&quot;, ++i, d-&gt;name);</span><br><span class="line">		if (d-&gt;description)</span><br><span class="line">			printf(&quot; (%s)\n&quot;, d-&gt;description);</span><br><span class="line">		else</span><br><span class="line">			printf(&quot; (No description available)\n&quot;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	int a; cin &gt;&gt; a;//卡一下显示。。。</span><br><span class="line">	if (i == 0)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;\nNo interfaces found! Make sure WinPcap is installed.\n&quot;);</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/* 不再需要设备列表了，释放它 */</span><br><span class="line">	pcap_freealldevs(alldevs);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/16/VS2017-配置winpcap/" data-id="ck15m5hyf0000bcuw60z3h09t" class="article-share-link">
+      <a data-url="http://yoursite.com/2018/05/21/mySQL连接JDBC-Win10-idea-intellij/" data-id="ck160cwdy0008g0uweyc7xwox" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -831,7 +820,7 @@ WSACleanup();
   
   <div class="sidebar-module">
     <h4>Tags</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/english/">english</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/tech/">tech</a><span class="sidebar-module-list-count">24</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/english/">english</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/tech/">tech</a><span class="sidebar-module-list-count">25</span></li></ul>
   </div>
 
 
@@ -839,7 +828,7 @@ WSACleanup();
   
   <div class="sidebar-module">
     <h4>Archives</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/09/">September 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/05/">May 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/05/">May 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/04/">April 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">1</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/09/">September 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/05/">May 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/05/">May 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/04/">April 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">1</span></li></ul>
   </div>
 
 
@@ -848,6 +837,10 @@ WSACleanup();
   <div class="sidebar-module">
     <h4>Recents</h4>
     <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2019/09/30/Different-between-shell-and-bash/">Difference between shell and bash</a>
+        </li>
       
         <li>
           <a href="/2019/09/29/sort-in-C/">sort() in C++</a>
@@ -863,10 +856,6 @@ WSACleanup();
       
         <li>
           <a href="/2019/05/21/tf-Faster-RCNN安装排坑/">tf-Faster-RCNN安装排坑</a>
-        </li>
-      
-        <li>
-          <a href="/2019/05/06/让你的所有网页都有同样的header和footer/">让你的所有网页都有同样的header和footer</a>
         </li>
       
     </ul>
