@@ -5,18 +5,18 @@
   
   <title>difference between emplace() and insert() | Cheng&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="emplace is faster.">
+  <meta name="description" content="Basically, they’re same. Except  emplace is faster when taking a class member as input, as they will call the constructor and construct the element right at the place. Meanwhile insert() is copying th">
 <meta name="keywords" content="tech,english">
 <meta property="og:type" content="article">
 <meta property="og:title" content="difference between emplace() and insert()">
 <meta property="og:url" content="http://yoursite.com/2019/10/06/difference-between-emplace-and-insert/index.html">
 <meta property="og:site_name" content="Cheng&#39;s Blog">
-<meta property="og:description" content="emplace is faster.">
+<meta property="og:description" content="Basically, they’re same. Except  emplace is faster when taking a class member as input, as they will call the constructor and construct the element right at the place. Meanwhile insert() is copying th">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-10-06T19:45:56.126Z">
+<meta property="og:updated_time" content="2019-10-06T19:56:13.129Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="difference between emplace() and insert()">
-<meta name="twitter:description" content="emplace is faster.">
+<meta name="twitter:description" content="Basically, they’re same. Except  emplace is faster when taking a class member as input, as they will call the constructor and construct the element right at the place. Meanwhile insert() is copying th">
   
     <link rel="alternate" href="/atom.xml" title="Cheng&#39;s Blog" type="application/atom+xml">
   
@@ -111,7 +111,13 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>emplace is faster.</p>
+        <p>Basically, they’re same. Except</p>
+<ul>
+<li><p>emplace is faster when taking a class member as input, as they will call the constructor and construct the element right at the place. Meanwhile insert() is copying the value.</p>
+</li>
+<li><p>insert() supports more overload formats.</p>
+</li>
+</ul>
 
       
     </div>
@@ -169,7 +175,7 @@
   
   <div class="sidebar-module">
     <h4>Tags</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/english/">english</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/tech/">tech</a><span class="sidebar-module-list-count">26</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/english/">english</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/tech/">tech</a><span class="sidebar-module-list-count">27</span></li></ul>
   </div>
 
 
