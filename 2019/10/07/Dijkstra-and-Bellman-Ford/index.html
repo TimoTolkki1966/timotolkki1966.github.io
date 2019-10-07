@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Difference between shell and bash | Cheng&#39;s Blog</title>
+  <title>Dijkstra and Bellman Ford | Cheng&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="shell is a type of sh. That is to say, bash is a superset of sh with a more elegant syntax and more functionality.  For a long time, /bin/sh used to point to /bin/bash on most GNU/Linux systems. Howe">
+  <meta name="description" content="Dijkstra123456789101112131415161718192021function Dijkstra(Graph, source):    create vertex set Q    for each vertex v in Graph:                     dist[v] ← INFINITY                          prev[v]">
 <meta name="keywords" content="tech,english">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Difference between shell and bash">
-<meta property="og:url" content="http://yoursite.com/2019/09/30/Different-between-shell-and-bash/index.html">
+<meta property="og:title" content="Dijkstra and Bellman Ford">
+<meta property="og:url" content="http://yoursite.com/2019/10/07/Dijkstra-and-Bellman-Ford/index.html">
 <meta property="og:site_name" content="Cheng&#39;s Blog">
-<meta property="og:description" content="shell is a type of sh. That is to say, bash is a superset of sh with a more elegant syntax and more functionality.  For a long time, /bin/sh used to point to /bin/bash on most GNU/Linux systems. Howe">
+<meta property="og:description" content="Dijkstra123456789101112131415161718192021function Dijkstra(Graph, source):    create vertex set Q    for each vertex v in Graph:                     dist[v] ← INFINITY                          prev[v]">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-10-06T19:53:47.248Z">
+<meta property="og:updated_time" content="2019-10-07T21:41:45.528Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Difference between shell and bash">
-<meta name="twitter:description" content="shell is a type of sh. That is to say, bash is a superset of sh with a more elegant syntax and more functionality.  For a long time, /bin/sh used to point to /bin/bash on most GNU/Linux systems. Howe">
+<meta name="twitter:title" content="Dijkstra and Bellman Ford">
+<meta name="twitter:description" content="Dijkstra123456789101112131415161718192021function Dijkstra(Graph, source):    create vertex set Q    for each vertex v in Graph:                     dist[v] ← INFINITY                          prev[v]">
   
     <link rel="alternate" href="/atom.xml" title="Cheng&#39;s Blog" type="application/atom+xml">
   
@@ -85,13 +85,13 @@
 
     <div class="row">
         <div class="col-sm-8 blog-main">
-          <article id="post-Different-between-shell-and-bash" class="article article-type-post" itemscope itemprop="blogPost">
+          <article id="post-Dijkstra-and-Bellman-Ford" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 class="article-title" itemprop="name">
-      Difference between shell and bash
+      Dijkstra and Bellman Ford
     </h1>
   
 
@@ -100,7 +100,7 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2019/09/30/Different-between-shell-and-bash/" class="article-date"><time datetime="2019-09-30T05:59:46.000Z" itemprop="datePublished">2019-09-30</time></a>
+  <a href="/2019/10/07/Dijkstra-and-Bellman-Ford/" class="article-date"><time datetime="2019-10-07T20:26:44.000Z" itemprop="datePublished">2019-10-07</time></a>
 </div>
 
     
@@ -111,12 +111,13 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li><p>shell is a type of sh. That is to say, bash is a superset of sh with a more elegant syntax and more functionality.</p>
-</li>
-<li><p>For a long time, <code>/bin/sh</code> used to point to <code>/bin/bash</code> on most GNU/Linux systems. However, at Ununtu or Debian, /bin/sh will redirect you to <code>dash</code>.</p>
-</li>
-</ul>
+        <h3 id="Dijkstra"><a href="#Dijkstra" class="headerlink" title="Dijkstra"></a>Dijkstra</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">function Dijkstra(Graph, source):</span><br><span class="line"></span><br><span class="line">    create vertex set Q</span><br><span class="line">    for each vertex v in Graph:             </span><br><span class="line">        dist[v] ← INFINITY                  </span><br><span class="line">        prev[v] ← UNDEFINED                 </span><br><span class="line">        add v to Q                      </span><br><span class="line">    dist[source] ← 0                        </span><br><span class="line">    </span><br><span class="line">    while Q is not empty:</span><br><span class="line">        u ← vertex in Q with min dist[u]    </span><br><span class="line">                                            </span><br><span class="line">        remove u from Q </span><br><span class="line">        </span><br><span class="line">        for each neighbor v of u:           // only v that are still in Q</span><br><span class="line">            alt ← dist[u] + length(u, v)</span><br><span class="line">            if alt &lt; dist[v]:               </span><br><span class="line">                dist[v] ← alt </span><br><span class="line">                prev[v] ← u </span><br><span class="line"></span><br><span class="line">    return dist[], prev[]</span><br></pre></td></tr></table></figure>
+<p>However, modern implementations of Dijkstra oftern uilize priority_queue.</p>
+<p>Priority_quere is not hard to learn and use, as it offers very limited functions for programmers to call.<a href="http://www.cplusplus.com/reference/queue/priority_queue/" target="_blank" rel="noopener">ref</a></p>
+<p><a href="https://leetcode.com/problems/network-delay-time/" target="_blank" rel="noopener">leetcode 743</a> is a pure application of Dijsktra. it takes the vectors as input to find the nearest distance between two nodes.</p>
+<h3 id="Bellman-Ford"><a href="#Bellman-Ford" class="headerlink" title="Bellman Ford"></a>Bellman Ford</h3><p>Bellman Ford is MUCH EASIER to implement:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">function BellmanFord(list vertices, list edges, vertex source)</span><br><span class="line">  ::distance[],predecessor[]</span><br><span class="line">  </span><br><span class="line">  // This implementation takes in a graph, represented as</span><br><span class="line">  // lists of vertices and edges, and fills two arrays</span><br><span class="line">  // (distance and predecessor) about the shortest path</span><br><span class="line">  // from the source to each vertex</span><br><span class="line">  </span><br><span class="line">  // Step 1: initialize graph</span><br><span class="line">  for each vertex v in vertices:</span><br><span class="line">      distance[v] := inf             // Initialize the distance to all vertices to infinity</span><br><span class="line">      predecessor[v] := null         // And having a null predecessor</span><br><span class="line">  </span><br><span class="line">  distance[source] := 0              // The distance from the source to itself is, of course, zero</span><br><span class="line">  </span><br><span class="line">  // Step 2: relax edges repeatedly</span><br><span class="line">  for i from 1 to size(vertices)-1:</span><br><span class="line">      for each edge (u, v) with weight w in edges:</span><br><span class="line">          if distance[u] + w &lt; distance[v]:</span><br><span class="line">              distance[v] := distance[u] + w</span><br><span class="line">              predecessor[v] := u</span><br><span class="line">  </span><br><span class="line">  // Step 3: check for negative-weight cycles</span><br><span class="line">  for each edge (u, v) with weight w in edges:</span><br><span class="line">      if distance[u] + w &lt; distance[v]:</span><br><span class="line">          error &quot;Graph contains a negative-weight cycle&quot;</span><br><span class="line">  </span><br><span class="line">  return distance[], predecessor[]</span><br></pre></td></tr></table></figure>
+<h3 id="Diff"><a href="#Diff" class="headerlink" title="Diff"></a>Diff</h3><p>Dijkstra does not support negative weight, while Bellman does.</p>
 
       
     </div>
@@ -127,7 +128,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/30/Different-between-shell-and-bash/" data-id="ck1gxxht50005uovx1lguvq3y" class="article-share-link">
+      <a data-url="http://yoursite.com/2019/10/07/Dijkstra-and-Bellman-Ford/" data-id="ck1gxxhsu0001uovxeakfnn73" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -142,19 +143,12 @@
 <ul id="article-nav" class="nav nav-pills nav-justified">
   
   <li role="presentation">
-    <a href="/2019/09/29/sort-in-C/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/10/06/Backtracking/" id="article-nav-older" class="article-nav-link-wrap">
       <i class="fa fa-chevron-left pull-left"></i>
-      <span class="article-nav-link-title">sort() in C++</span>
+      <span class="article-nav-link-title">Backtracking</span>
     </a>
   </li>
   
-  
-  <li role="presentation">
-    <a href="/2019/09/30/Priority-Queue/" id="article-nav-newer" class="article-nav-link-wrap">
-      <span class="article-nav-link-title">Priority Queue</span>
-      <i class="fa fa-chevron-right pull-right"></i>
-    </a>
-  </li>
   
 </ul>
 
