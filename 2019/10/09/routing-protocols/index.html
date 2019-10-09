@@ -5,13 +5,13 @@
   
   <title>routing protocols | Cheng&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="路由协议##　一、综述 ###　定义 路由（网关）协议是用来指定数据包转送方式的网络协议。Internet网络的主要节点设备是路由器，路由器通过路由表来转发接收到的数据。路由协议可以让路由器自动学习到其他路由器的网络，并且在网络拓扑发生改变后自动更新路由表。 ###　分类 路由协议根据作用范围不同，可以分为两种：  内部网关协议（Interior Gateway Protocol），指在一个自治系">
+  <meta name="description" content="一、综述定义路由（网关）协议是用来指定数据包转送方式的网络协议。Internet网络的主要节点设备是路由器，路由器通过路由表来转发接收到的数据。路由协议可以让路由器自动学习到其他路由器的网络，并且在网络拓扑发生改变后自动更新路由表。 分类路由协议根据作用范围不同，可以分为两种：  内部网关协议（Interior Gateway Protocol），指在一个自治系统(Autonomous syste">
 <meta name="keywords" content="tech">
 <meta property="og:type" content="article">
 <meta property="og:title" content="routing protocols">
 <meta property="og:url" content="http://yoursite.com/2019/10/09/routing-protocols/index.html">
 <meta property="og:site_name" content="Cheng&#39;s Blog">
-<meta property="og:description" content="路由协议##　一、综述 ###　定义 路由（网关）协议是用来指定数据包转送方式的网络协议。Internet网络的主要节点设备是路由器，路由器通过路由表来转发接收到的数据。路由协议可以让路由器自动学习到其他路由器的网络，并且在网络拓扑发生改变后自动更新路由表。 ###　分类 路由协议根据作用范围不同，可以分为两种：  内部网关协议（Interior Gateway Protocol），指在一个自治系">
+<meta property="og:description" content="一、综述定义路由（网关）协议是用来指定数据包转送方式的网络协议。Internet网络的主要节点设备是路由器，路由器通过路由表来转发接收到的数据。路由协议可以让路由器自动学习到其他路由器的网络，并且在网络拓扑发生改变后自动更新路由表。 分类路由协议根据作用范围不同，可以分为两种：  内部网关协议（Interior Gateway Protocol），指在一个自治系统(Autonomous syste">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13609721-dd9c6e9ac017757f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13609721-91cda7af6af79b57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -20,10 +20,10 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13609721-e88adea255626077.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13609721-5a29cda4d3f395d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13609721-f25db3d957f23196.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-10-09T04:39:53.191Z">
+<meta property="og:updated_time" content="2019-10-09T04:42:38.521Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="routing protocols">
-<meta name="twitter:description" content="路由协议##　一、综述 ###　定义 路由（网关）协议是用来指定数据包转送方式的网络协议。Internet网络的主要节点设备是路由器，路由器通过路由表来转发接收到的数据。路由协议可以让路由器自动学习到其他路由器的网络，并且在网络拓扑发生改变后自动更新路由表。 ###　分类 路由协议根据作用范围不同，可以分为两种：  内部网关协议（Interior Gateway Protocol），指在一个自治系">
+<meta name="twitter:description" content="一、综述定义路由（网关）协议是用来指定数据包转送方式的网络协议。Internet网络的主要节点设备是路由器，路由器通过路由表来转发接收到的数据。路由协议可以让路由器自动学习到其他路由器的网络，并且在网络拓扑发生改变后自动更新路由表。 分类路由协议根据作用范围不同，可以分为两种：  内部网关协议（Interior Gateway Protocol），指在一个自治系统(Autonomous syste">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/13609721-dd9c6e9ac017757f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternate" href="/atom.xml" title="Cheng&#39;s Blog" type="application/atom+xml">
@@ -119,11 +119,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="路由协议"><a href="#路由协议" class="headerlink" title="路由协议"></a>路由协议</h1><p>##　一、综述</p>
-<p>###　定义</p>
-<p>路由（网关）协议是用来<strong>指定数据包转送方式</strong>的网络协议。Internet网络的主要节点设备是路由器，路由器通过路由表来转发接收到的数据。<br>路由协议可以让路由器自动学习到其他路由器的网络，并且在网络拓扑发生改变后自动更新路由表。</p>
-<p>###　分类</p>
-<p><strong>路由协议</strong>根据作用范围不同，可以分为两种：</p>
+        <h2 id="一、综述"><a href="#一、综述" class="headerlink" title="一、综述"></a>一、综述</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>路由（网关）协议是用来<strong>指定数据包转送方式</strong>的网络协议。Internet网络的主要节点设备是路由器，路由器通过路由表来转发接收到的数据。<br>路由协议可以让路由器自动学习到其他路由器的网络，并且在网络拓扑发生改变后自动更新路由表。</p>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p><strong>路由协议</strong>根据作用范围不同，可以分为两种：</p>
 <ol>
 <li>内部网关协议（Interior Gateway Protocol），指在一个自治系统(Autonomous system, AS)内部所使用的一种路由协议。<a href="https://zh.wikipedia.org/wiki/%E8%87%AA%E6%B2%BB%E7%B3%BB%E7%BB%9F" target="_blank" rel="noopener">自治系统</a>是指一个实体管辖下的所有IP网络和路由器，有自己的编号</li>
 <li>外部网关协议（Exterior Gateway Protocol），在自治系统之间使用。</li>
