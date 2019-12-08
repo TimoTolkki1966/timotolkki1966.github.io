@@ -82,85 +82,6 @@
         <div class="col-sm-8 blog-main">
           
   
-    <article id="post-tf-Faster-RCNN安装排坑" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/21/tf-Faster-RCNN安装排坑/">tf-Faster-RCNN安装排坑</a>
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/2019/05/21/tf-Faster-RCNN安装排坑/" class="article-date"><time datetime="2019-05-22T02:34:25.000Z" itemprop="datePublished">2019-05-21</time></a>
-</div>
-
-    
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="overview"><a href="#overview" class="headerlink" title="overview"></a>overview</h2><p><a href="https://github.com/endernewton/tf-faster-rcnn" target="_blank" rel="noopener">github地址</a></p>
-<p>GTX970对应的架构是sm_52。</p>
-<ul>
-<li>系统： Ubuntu16.04</li>
-<li>显卡： GTX970</li>
-<li>cuda版本： 9.0 + 对应版本cudnn（7.5.1）</li>
-<li>tensorflow版本：1.12.0 （对应cuda，1.13只支持cuda10.0）</li>
-</ul>
-<p>按照github上面的就都ok，缺什么module就安什么。如果安好之后，没有使用GPU，就是依赖没安装对。实际上就是tensorflow+cuda+cudnn没安装对。</p>
-<h2 id="安装tensorflow"><a href="#安装tensorflow" class="headerlink" title="安装tensorflow"></a>安装tensorflow</h2><p>要同时安装tensorflow和tensorflow-gpu，使用pip install就可以，但是因为cuda9.0只能和tensorflow r1.12.0使用，所以要指定tf版本。</p>
-<pre><code>sudo pip install tensorflow==1.12.0 -i &lt;国内源&gt;
-sudo pip3 install tensorflow-gpu==1.12.0 -i &lt;国内源&gt;
-sudo pip install tensorflow==1.12.0 -i &lt;国内源&gt;
-sudo pip3 install tensorflow-gpu==1.12.0 -i &lt;国内源&gt;
-</code></pre><p>安装好使用</p>
-<pre><code>pip list | grep tensorflow
-</code></pre><p>查看，注意tensorflow和tensorflow gpu版要对应，tf-estimator也要对应。不行就全都卸载了重新安装。</p>
-<p>验证方式也简单，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python</span><br><span class="line">&gt;&gt;&gt; import tensorflow</span><br></pre></td></tr></table></figure>
-<p>不报错就好了。</p>
-<h2 id="安装cuda"><a href="#安装cuda" class="headerlink" title="安装cuda"></a>安装cuda</h2><p>之后安装cuda，首先从ubunut设置里面安装好驱动，384.xx那个。</p>
-<p>cuda安装去官网找就好，使用runfile方式安装更简单，注意已经有驱动了，不需要安装驱动。</p>
-<p>cuda安好之后记得设置path。</p>
-<p>cuda安装好了记得验证，官网有写怎么验证。</p>
-<h2 id="安装cudnn"><a href="#安装cudnn" class="headerlink" title="安装cudnn"></a>安装cudnn</h2><p>cudnn下载界面特别懒没任何介绍，他们实际上是有一个doc的。会告诉你下载四个文件，其中三个是lib。</p>
-<p>安装好之后还会有个example让你测试，会报错INTERNAL什么的，百度一下会让你rm什么玩意，rm了之后make clean &amp;&amp; make就好了。</p>
-<p><strong>最坑的是cuda，cudnn，tensorflow这三个都要好了才能用GPU，不然就会用CPU，跑的很慢。</strong><br><strong>之前我跑要3.5s*5000的时间，200多分钟，安好了之后用970跑是20分钟。</strong></p>
-
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/21/tf-Faster-RCNN安装排坑/" data-id="ck3w4e3ux000xmovxbhgpeh0i" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tech/">tech</a></li></ul>
-
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-让你的所有网页都有同样的header和footer" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
@@ -728,10 +649,78 @@ favicon: /image/favicon.ico
 
 
   
+    <article id="post-解决go-get报错unrecognized-import-path的问题" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/31/解决go-get报错unrecognized-import-path的问题/">解决go get报错unrecognized import path的问题</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2018/07/31/解决go-get报错unrecognized-import-path的问题/" class="article-date"><time datetime="2018-08-01T01:54:53.000Z" itemprop="datePublished">2018-07-31</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在使用go get包安装zgrab时，遇到了下面的问题：</p>
+<p>在linux终端（或powershell中）输入命令</p>
+<pre><code>github.com/zmap/zgrab2
+</code></pre><p>返回以下提示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">package golang.org/x/crypto/ssh/terminal: unrecognized import path &quot;golang.org/x/crypto/ssh/terminal&quot; (https fetch: Get https://golang.org/x/crypto/ssh/terminal?go-get=1: dial tcp 216.239.37.1:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.)</span><br></pre></td></tr></table></figure></p>
+<img src="/2018/07/31/解决go-get报错unrecognized-import-path的问题/1.png">
+<p>问题造成的原因很简单：被墙了，甚至ss都翻不过去（包括golang.org也总是上不去，不知道为什么） 。</p>
+<p>解决方法：在github上搜索对应的包，自行拷贝到GOPATH的src目录下。</p>
+<p>注意路径如下修改：</p>
+<p>以上图为例，在github上搜索golang/crypto。</p>
+<p>下载zip，解压后改名为”crypto”（去掉-master字样）</p>
+<p>然后在GOPATH下的src目录中，找到golang.org文件夹（没有的话自己新建）</p>
+<p>在下面新建文件夹，名为x</p>
+<p>将刚才下载的crypto文件夹整个拷贝到x文件夹下。完成。</p>
+<p>如果继续报错的话，继续搜索并拷贝。</p>
+<img src="/2018/07/31/解决go-get报错unrecognized-import-path的问题/2.png">
+<p>以zgrab2安装为例，最终从github上下载了4个文件夹，如图所示。</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/31/解决go-get报错unrecognized-import-path的问题/" data-id="ck3w4e3wf001kmovxisjuxfjf" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tech/">tech</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
 
 
   <div id="page-nav">
-    <nav><ul class="pagination"><li><a class="page-prev" rel="prev" href="/"><i class="fa fa-chevron-left"></i> Prev</a></li><li><a class="page-number" href="/">1</a></li><li class="active"><span class="page-number">2</span></li><li><a class="page-number" href="/page/3/">3</a></li><li><a class="page-number" href="/page/4/">4</a></li><li><a class="page-next" rel="next" href="/page/3/">Next <i class="fa fa-chevron-right"></i></a></li></ul></nav>
+    <nav><ul class="pagination"><li><a class="page-prev" rel="prev" href="/"><i class="fa fa-chevron-left"></i> Prev</a></li><li><a class="page-number" href="/">1</a></li><li class="active"><span class="page-number">2</span></li><li><a class="page-number" href="/page/3/">3</a></li><li><a class="page-next" rel="next" href="/page/3/">Next <i class="fa fa-chevron-right"></i></a></li></ul></nav>
   </div>
 
 
@@ -752,7 +741,7 @@ favicon: /image/favicon.ico
   
   <div class="sidebar-module">
     <h4>Tags</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/english/">english</a><span class="sidebar-module-list-count">9</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/tech/">tech</a><span class="sidebar-module-list-count">31</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/english/">english</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/tech/">tech</a><span class="sidebar-module-list-count">30</span></li></ul>
   </div>
 
 
@@ -760,7 +749,7 @@ favicon: /image/favicon.ico
   
   <div class="sidebar-module">
     <h4>Archives</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/12/">December 2019</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/10/">October 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/09/">September 2019</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/05/">May 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/05/">May 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/04/">April 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">1</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/10/">October 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/09/">September 2019</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/05/">May 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/08/">August 2018</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/05/">May 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/04/">April 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">1</span></li></ul>
   </div>
 
 
@@ -769,10 +758,6 @@ favicon: /image/favicon.ico
   <div class="sidebar-module">
     <h4>Recents</h4>
     <ul class="sidebar-module-list">
-      
-        <li>
-          <a href="/2019/12/07/Nexflix-CodeChallenge-Handin/">Nexflix-CodeChallenge-Handin</a>
-        </li>
       
         <li>
           <a href="/2019/10/09/routing-protocols/">routing protocols</a>
@@ -788,6 +773,10 @@ favicon: /image/favicon.ico
       
         <li>
           <a href="/2019/10/06/difference-between-emplace-and-insert/">difference between emplace() and insert()</a>
+        </li>
+      
+        <li>
+          <a href="/2019/09/30/Priority-Queue/">Priority Queue</a>
         </li>
       
     </ul>
